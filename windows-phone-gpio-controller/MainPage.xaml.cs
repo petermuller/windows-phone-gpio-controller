@@ -37,14 +37,14 @@ namespace windows_phone_gpio_controller
 
         }
 
-        private void TextBox_Password(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
         private void Button_Connect(object sender, RoutedEventArgs e)
         {
             
+        }
+
+        private void TextBox_Password(object sender, System.Windows.Input.TextCompositionEventArgs e)
+        {
+
         }
 
         // Sample code for building a localized ApplicationBar

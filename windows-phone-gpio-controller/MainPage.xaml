@@ -49,8 +49,8 @@
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Margin="12,109,0,0" Grid.Row="1"/>
         <TextBox x:Name="UsernameInput" HorizontalAlignment="Left" Height="72" TextWrapping="Wrap" VerticalAlignment="Top" Width="456" Margin="0,136,0,0" Grid.Row="1" TextChanged="TextBox_Username"/>
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Margin="12,208,0,0" Grid.Row="1"/>
-        <TextBox x:Name="PasswordInput" HorizontalAlignment="Left" Height="72" TextWrapping="Wrap" VerticalAlignment="Top" Width="456" Margin="0,235,0,0" Grid.Row="1" TextChanged="TextBox_Password"/>
         <Button x:Name="ConnectButton" Content="Connect" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,312,0,0" Grid.Row="1" Click="Button_Connect"/>
+        <PasswordBox x:Name="PasswordInput" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,230,0,0" Grid.Row="1" Width="456" TextInput="TextBox_Password"/>
 
         <!--ContentPanel - place additional content here-->
 
