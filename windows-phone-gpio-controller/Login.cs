@@ -17,6 +17,8 @@ namespace windows_phone_gpio_controller
         public void getConnection()
         {
             //Insert a function for connecting to the raspberry pi.
+            //Will be using socket interaction with a python script server on the Pi.
+            //
         }
     }
 }
