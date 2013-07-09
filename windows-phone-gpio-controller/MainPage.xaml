@@ -40,6 +40,8 @@
          -->
 
         <!--TitlePanel contains the name of the application and page title-->
+
+        <!--TitlePanel contains the name of the application and page title-->
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
             <TextBlock Text="Raspberry Pi GPIO Control" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0"/>
             <TextBlock Text="Connect" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
@@ -51,6 +53,7 @@
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Margin="12,208,0,0" Grid.Row="1"/>
         <Button x:Name="ConnectButton" Content="Connect" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,312,0,0" Grid.Row="1" Click="Button_Connect"/>
         <PasswordBox x:Name="PasswordInput" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,230,0,0" Grid.Row="1" Width="456" TextInput="TextBox_Password"/>
+        <TextBox HorizontalAlignment="Left" Height="72" Margin="190,569,-166,-34" Grid.Row="1" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="456"/>
 
         <!--ContentPanel - place additional content here-->
 

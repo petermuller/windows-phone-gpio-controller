@@ -22,11 +22,6 @@ namespace windows_phone_gpio_controller
             //BuildLocalizedApplicationBar();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void TextBox_HostAddress(object sender, TextChangedEventArgs e)
         {
 
