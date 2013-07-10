@@ -6,13 +6,12 @@
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d"
+    mc:Ignorable="d" 
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
     shell:SystemTray.IsVisible="True">
-
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="#FF171717">
         <Grid.RowDefinitions>
@@ -40,8 +39,10 @@
          -->
 
         <!--TitlePanel contains the name of the application and page title-->
+
+        <!--TitlePanel contains the name of the application and page title-->
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Text="Raspberry Pi GPIO Control" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0"/>
+            <TextBlock Text="Raspberry Pi GPIO Controler" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0"/>
             <TextBlock Text="Connect" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="IP Address / Host Name" VerticalAlignment="Top" Margin="12,10,0,0" Grid.Row="1" Width="249"/>
@@ -49,11 +50,11 @@
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Margin="12,109,0,0" Grid.Row="1"/>
         <TextBox x:Name="UsernameInput" HorizontalAlignment="Left" Height="72" TextWrapping="Wrap" VerticalAlignment="Top" Width="456" Margin="0,136,0,0" Grid.Row="1" TextChanged="TextBox_Username"/>
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Margin="12,208,0,0" Grid.Row="1"/>
-        <Button x:Name="ConnectButton" Content="Connect" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,312,0,0" Grid.Row="1" Click="Button_Connect"/>
+        <Button x:Name="ConnectButton" Content="Connect" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,307,0,0" Grid.Row="1" Click="Button_Connect"/>
         <PasswordBox x:Name="PasswordInput" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,230,0,0" Grid.Row="1" Width="456" TextInput="TextBox_Password"/>
 
         <!--ContentPanel - place additional content here-->
-
+        
         <!--Uncomment to see an alignment grid to help ensure your controls are
             aligned on common boundaries.  The image has a top margin of -32px to
             account for the System Tray. Set this to 0 (or remove the margin altogether)
@@ -62,5 +63,12 @@
             Before shipping remove this XAML and the image itself.-->
         <!--<Image Source="/Assets/AlignmentGrid.png" VerticalAlignment="Top" Height="800" Width="480" Margin="0,-32,0,0" Grid.Row="0" Grid.RowSpan="2" IsHitTestVisible="False" />-->
     </Grid>
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True" Mode="Minimized" Opacity="1.0" >
 
+            <shell:ApplicationBar.MenuItems>
+            </shell:ApplicationBar.MenuItems>
+
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
 </phone:PhoneApplicationPage>
