@@ -13,8 +13,6 @@ namespace windows_phone_gpio_controller
 {
     public partial class MainPage : PhoneApplicationPage
     {
-        //Class variables
-        Communicator c;
 
         // Constructor
         public MainPage()
@@ -37,14 +35,7 @@ namespace windows_phone_gpio_controller
 
         private void Button_Connect(object sender, RoutedEventArgs e)
         {
-
-          //  String host = HostAddressInput.Text;
-          //  int port = Convert.ToInt32(UsernameInput.Text);
-          //  c = new Communicator(host, port);
-          //  c.sendCommand("Nailed it");
-
             NavigationService.Navigate(new Uri("/GPIOControl.xaml", UriKind.Relative));
-
         }
 
         private void TextBox_Password(object sender, System.Windows.Input.TextCompositionEventArgs e)
