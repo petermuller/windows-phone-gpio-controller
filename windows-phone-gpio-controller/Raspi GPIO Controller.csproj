@@ -25,6 +25,7 @@
     <ValidateXaml>true</ValidateXaml>
     <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
     <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <ExpressionBlendVersion>5.0.40218.0</ExpressionBlendVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -127,7 +128,6 @@
     <None Include="Properties\WMAppManifest.xml">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Raspi_GPIO_Controller_2013_07_09_19_58_40.sap" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\AlignmentGrid.png" />
@@ -149,6 +149,44 @@
     <Content Include="Assets\Tiles\IconicTileSmall.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Icons\add.png" />
+    <Content Include="Icons\back.png" />
+    <Content Include="Icons\basecircle.png" />
+    <Content Include="Icons\cancel.png" />
+    <Content Include="Icons\check.png" />
+    <Content Include="Icons\close.png" />
+    <Content Include="Icons\DarkIcons.dll" />
+    <Content Include="Icons\delete.png" />
+    <Content Include="Icons\download.png" />
+    <Content Include="Icons\edit.png" />
+    <Content Include="Icons\favs.addto.png" />
+    <Content Include="Icons\favs.png" />
+    <Content Include="Icons\feature.alarm.png" />
+    <Content Include="Icons\feature.calendar.png" />
+    <Content Include="Icons\feature.camera.png" />
+    <Content Include="Icons\feature.email.png" />
+    <Content Include="Icons\feature.phone.png" />
+    <Content Include="Icons\feature.search.png" />
+    <Content Include="Icons\feature.settings.png" />
+    <Content Include="Icons\feature.video.png" />
+    <Content Include="Icons\folder.png" />
+    <Content Include="Icons\like.png" />
+    <Content Include="Icons\microphone.png" />
+    <Content Include="Icons\minus.png" />
+    <Content Include="Icons\new.png" />
+    <Content Include="Icons\next.png" />
+    <Content Include="Icons\overflowdots.png" />
+    <Content Include="Icons\questionmark.png" />
+    <Content Include="Icons\refresh.png" />
+    <Content Include="Icons\save.png" />
+    <Content Include="Icons\share.png" />
+    <Content Include="Icons\stop.png" />
+    <Content Include="Icons\sync.png" />
+    <Content Include="Icons\transport.ff.png" />
+    <Content Include="Icons\transport.pause.png" />
+    <Content Include="Icons\transport.play.png" />
+    <Content Include="Icons\transport.rew.png" />
+    <Content Include="Icons\upload.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\AppResources.resx">
@@ -158,6 +196,9 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Phone.Controls, Version=8.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pi-black.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />

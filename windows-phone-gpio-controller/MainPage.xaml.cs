@@ -13,6 +13,11 @@ namespace windows_phone_gpio_controller
 {
     public partial class MainPage : PhoneApplicationPage
     {
+<<<<<<< HEAD
+=======
+        //Class variables
+       // Communicator c;
+>>>>>>> Background And Cleaning Up UI
 
         // Constructor
         public MainPage()
@@ -41,6 +46,30 @@ namespace windows_phone_gpio_controller
         private void TextBox_Password(object sender, System.Windows.Input.TextCompositionEventArgs e)
         {
 
+        }
+
+        private void Save_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Save button works!");
+            //Do work for your application here.
+        }
+
+        private void Settings_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Settings button works!");
+            //Do work for your application here.
+        }
+
+        private void MenuItem1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Menu item 1 works!");
+            //Do work for your application here.
+        }
+
+        private void MenuItem2_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Menu item 2 works!");
+            //Do work for your application here.
         }
 
         // Sample code for building a localized ApplicationBar
