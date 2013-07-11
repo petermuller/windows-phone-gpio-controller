@@ -35,6 +35,7 @@ namespace windows_phone_gpio_controller
 
         private void Button_Connect(object sender, RoutedEventArgs e)
         {
+            //Insert my code here.
             NavigationService.Navigate(new Uri("/GPIOControl.xaml", UriKind.Relative));
         }
 
