@@ -13,12 +13,13 @@ namespace windows_phone_gpio_controller
 {
     public partial class MainPage : PhoneApplicationPage
     {
+        //Class variables
+        SocketClient sc = new SocketClient();
 
         // Constructor
         public MainPage()
         {
             InitializeComponent();
-
             // Sample code to localize the ApplicationBar
             //BuildLocalizedApplicationBar();
         }
@@ -35,6 +36,17 @@ namespace windows_phone_gpio_controller
 
         private void Button_Connect(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                String host = HostAddressInput.Text;
+                int port = Convert.ToInt32(PortInput.Text);
+                sc.Connect(host, port);
+                sc.Send("Testing!");
+            }
+            catch
+            {
+                //Debugging error: print something to the screen (or not go to next page)
+            }
             NavigationService.Navigate(new Uri("/GPIOControl.xaml", UriKind.Relative));
         }
 

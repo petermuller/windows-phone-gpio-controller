@@ -98,7 +98,7 @@
       <DependentUpon>HelpGPIOControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="LocalizedStrings.cs" />
-    <Compile Include="Communicator.cs" />
+    <Compile Include="SocketClient.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
