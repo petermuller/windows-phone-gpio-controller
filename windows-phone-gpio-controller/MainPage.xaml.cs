@@ -38,14 +38,9 @@ namespace windows_phone_gpio_controller
             NavigationService.Navigate(new Uri("/GPIOControl.xaml", UriKind.Relative));
         }
 
-        private void TextBox_Password(object sender, System.Windows.Input.TextCompositionEventArgs e)
-        {
-
-        }
-
         private void Help_Click(object sender, EventArgs e)
         {
-            NavigationService.Navigate(new Uri("/HelpSSH.xaml", UriKind.Relative));
+            NavigationService.Navigate(new Uri("/HelpConnect.xaml", UriKind.Relative));
         }
     }
 }

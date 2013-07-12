@@ -105,8 +105,8 @@
     <Compile Include="GPIOControl.xaml.cs">
       <DependentUpon>GPIOControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="HelpSSH.xaml.cs">
-      <DependentUpon>HelpSSH.xaml</DependentUpon>
+    <Compile Include="HelpConnect.xaml.cs">
+      <DependentUpon>HelpConnect.xaml</DependentUpon>
     </Compile>
     <Compile Include="AboutUs.xaml.cs">
       <DependentUpon>AboutUs.xaml</DependentUpon>
@@ -135,7 +135,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="HelpSSH.xaml">
+    <Page Include="HelpConnect.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

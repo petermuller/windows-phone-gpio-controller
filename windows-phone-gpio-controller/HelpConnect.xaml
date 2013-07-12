@@ -22,12 +22,12 @@
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Text="SSH Help" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock Text="Connect Help" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Filled with Peter's wise teachings about SSH..." VerticalAlignment="Top" Height="614" Width="446"/>
+            <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Filled with Peter's wise teachings about connecting this bad boy..." VerticalAlignment="Top" Height="614" Width="446"/>
             <Button x:Name="goback_buttpm" Content="Go Back" HorizontalAlignment="Left" Margin="0,552,0,0" VerticalAlignment="Top" Click="Goback_Click"/>
 
         </Grid>
