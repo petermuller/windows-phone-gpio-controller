@@ -37,7 +37,20 @@
             <phone:PanoramaItem Header="Monitor">
                 <Grid/>
             </phone:PanoramaItem>
+            
+            
         </phone:Panorama>
+        
     </Grid>
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True" Mode="Default" Opacity="1.0" ForegroundColor="Black" BackgroundColor="#FFC30C46" >
+
+            <shell:ApplicationBar.MenuItems>
+            </shell:ApplicationBar.MenuItems>
+            <shell:ApplicationBarIconButton Click="HelpGPIO_Click" IconUri="/Assets/AppBar/questionmark.png" Text="help"/>
+            <shell:ApplicationBarIconButton Click="About_Click" IconUri="/Assets/AppBar/1f347-Grapes.100.png" Text="about"/>
+
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
 
 </phone:PhoneApplicationPage>

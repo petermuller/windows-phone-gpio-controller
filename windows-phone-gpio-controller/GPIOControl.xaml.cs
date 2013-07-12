@@ -21,5 +21,20 @@ namespace windows_phone_gpio_controller
         {
 
         }
+
+        private void About_Click(object sender, EventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/AboutUS.xaml", UriKind.Relative));
+        }
+
+        private void ApplicationBarIconButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void HelpGPIO_Click(object sender, EventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/HelpGPIOControl.xaml", UriKind.Relative));
+        }
     }
 }
