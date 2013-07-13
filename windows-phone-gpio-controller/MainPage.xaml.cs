@@ -38,10 +38,10 @@ namespace windows_phone_gpio_controller
         {
             try
             {
-                String host = HostAddressInput.Text;
-                int port = Convert.ToInt32(PortInput.Text);
-                sc.Connect(host, port);
-                sc.Send("Testing!");
+              //  String host = HostAddressInput.Text;
+              //  int port = Convert.ToInt32(PortInput.Text);
+              //  sc.Connect(host, port);
+              //  sc.Send("Testing!");
             }
             catch
             {

@@ -36,5 +36,10 @@ namespace windows_phone_gpio_controller
         {
             NavigationService.Navigate(new Uri("/HelpGPIOControl.xaml", UriKind.Relative));
         }
+
+        private void Location_Click(object sender, EventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/PinLocation.xaml", UriKind.Relative));
+        }
     }
 }

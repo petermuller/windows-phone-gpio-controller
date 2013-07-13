@@ -50,9 +50,10 @@
         </StackPanel>
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="IP Address / Host Name" VerticalAlignment="Top" Margin="12,10,0,0" Grid.Row="1" Width="249"/>
         <TextBox x:Name="HostAddressInput" HorizontalAlignment="Left" Height="72" TextWrapping="Wrap" VerticalAlignment="Top" Width="456" Margin="0,37,0,0" Grid.Row="1" TextChanged="TextBox_HostAddress"/>
-        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Port Number" VerticalAlignment="Top" Margin="12,109,0,0" Grid.Row="1"/>
-        <TextBox x:Name="PortInput" HorizontalAlignment="Left" Height="72" TextWrapping="Wrap" VerticalAlignment="Top" Width="456" Margin="0,136,0,0" Grid.Row="1" TextChanged="TextBox_Username"/>
-        <Button x:Name="ConnectButton" Content="Connect" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="145,409,0,0" Grid.Row="1" Click="Button_Connect" Height="96" Width="190"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Port Number" VerticalAlignment="Top" Margin="10,109,0,0" Grid.Row="1"/>
+        <Button x:Name="ConnectButton" Content="Connect" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,213,0,0" Grid.Row="1" Click="Button_Connect" Height="76" Width="150"/>
+        <TextBox x:Name="UsernameInput" HorizontalAlignment="Left" Height="72" TextWrapping="Wrap" VerticalAlignment="Top" Width="456" Margin="0,141,0,0" Grid.Row="1" TextChanged="TextBox_Username"/>
+
 
         <!--ContentPanel - place additional content here-->
 

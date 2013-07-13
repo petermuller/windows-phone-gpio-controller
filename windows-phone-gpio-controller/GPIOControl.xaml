@@ -45,7 +45,7 @@
             </shell:ApplicationBar.MenuItems>
             <shell:ApplicationBarIconButton Click="HelpGPIO_Click" IconUri="/Assets/AppBar/questionmark.png" Text="help"/>
             <shell:ApplicationBarIconButton Click="About_Click" IconUri="/Assets/AppBar/1f347-Grapes.100.png" Text="about"/>
-
+            <shell:ApplicationBarIconButton Click="Location_Click" IconUri="/Assets/AppBar/e123-Crop.100.png" Text="pin location"/>
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>
 
