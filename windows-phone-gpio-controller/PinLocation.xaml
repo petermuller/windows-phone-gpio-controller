@@ -31,7 +31,7 @@
                 <ImageBrush Stretch="Fill" ImageSource="p1header.png"/>
             </Grid.Background>
         </Grid>
-        <Button Content="Go Back" HorizontalAlignment="Left" Margin="0,570,0,-8" VerticalAlignment="Top" Click="Button_Click" RenderTransformOrigin="2.052,-1.014" Grid.Row="1"/>
+        <Button Content="Go Back" HorizontalAlignment="Left" Margin="-4,571,0,-9" VerticalAlignment="Top" Click="Button_Click" RenderTransformOrigin="2.052,-1.014" Grid.Row="1"/>
     </Grid>
 
 </phone:PhoneApplicationPage>

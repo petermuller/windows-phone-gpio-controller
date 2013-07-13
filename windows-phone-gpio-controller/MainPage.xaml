@@ -52,7 +52,7 @@
         <TextBox x:Name="HostAddressInput" HorizontalAlignment="Left" Height="72" TextWrapping="Wrap" VerticalAlignment="Top" Width="456" Margin="0,37,0,0" Grid.Row="1" TextChanged="TextBox_HostAddress"/>
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Port Number" VerticalAlignment="Top" Margin="10,109,0,0" Grid.Row="1"/>
         <Button x:Name="ConnectButton" Content="Connect" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,213,0,0" Grid.Row="1" Click="Button_Connect" Height="76" Width="150"/>
-        <TextBox x:Name="UsernameInput" HorizontalAlignment="Left" Height="72" TextWrapping="Wrap" VerticalAlignment="Top" Width="456" Margin="0,141,0,0" Grid.Row="1" TextChanged="TextBox_Username"/>
+        <TextBox x:Name="PortNumberInput" HorizontalAlignment="Left" Height="72" TextWrapping="Wrap" VerticalAlignment="Top" Width="456" Margin="0,141,0,0" Grid.Row="1" TextChanged="TextBox_Portnumber"/>
 
 
         <!--ContentPanel - place additional content here-->

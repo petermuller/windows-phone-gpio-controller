@@ -29,7 +29,7 @@ namespace windows_phone_gpio_controller
             
         }
 
-        private void TextBox_Username(object sender, TextChangedEventArgs e)
+        private void TextBox_Portnumber(object sender, TextChangedEventArgs e)
         {
 
         }
