@@ -35,6 +35,8 @@ namespace windows_phone_gpio_controller
             // Language display initialization
             InitializeLanguage();
 
+            ThemeManager.ToDarkTheme();
+
             // Show graphics profiling information while debugging.
             if (Debugger.IsAttached)
             {

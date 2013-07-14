@@ -27,11 +27,6 @@ namespace windows_phone_gpio_controller
             NavigationService.Navigate(new Uri("/AboutUS.xaml", UriKind.Relative));
         }
 
-        private void ApplicationBarIconButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void HelpGPIO_Click(object sender, EventArgs e)
         {
             NavigationService.Navigate(new Uri("/HelpGPIOControl.xaml", UriKind.Relative));
@@ -40,6 +35,11 @@ namespace windows_phone_gpio_controller
         private void Location_Click(object sender, EventArgs e)
         {
             NavigationService.Navigate(new Uri("/PinLocation.xaml", UriKind.Relative));
+        }
+
+        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+        
         }
     }
 }

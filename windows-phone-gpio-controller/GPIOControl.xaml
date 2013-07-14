@@ -17,12 +17,12 @@
     <Grid x:Name="LayoutRoot">
         <phone:Panorama Title="GPIO Control" Loaded="Panorama_Loaded">
             <phone:Panorama.Background>
-                <ImageBrush Stretch="UniformToFill" ImageSource="pi-black.jpg"/>
+                <ImageBrush ImageSource="/square.png" Stretch="UniformToFill"/>
             </phone:Panorama.Background>
 
             <!--Panorama item one-->
             <phone:PanoramaItem Header="Polarity">
-                <Grid/>
+                <ScrollViewer HorizontalAlignment="Left" Height="411" VerticalAlignment="Top" Width="420"/>
             </phone:PanoramaItem>
 
             <!--Panorama item two-->

@@ -17,7 +17,6 @@
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
         <!--TitlePanel contains the name of the application and page title-->
@@ -26,12 +25,12 @@
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel" Height="634" VerticalAlignment="Bottom" Margin="0,0,0,43" Grid.RowSpan="2">
+        <Grid x:Name="ContentPanel" Height="634" VerticalAlignment="Bottom" Margin="0,0,0,-95">
             <Grid.Background>
                 <ImageBrush Stretch="Fill" ImageSource="p1header.png"/>
             </Grid.Background>
         </Grid>
-        <Button Content="Go Back" HorizontalAlignment="Left" Margin="-4,571,0,-9" VerticalAlignment="Top" Click="Button_Click" RenderTransformOrigin="2.052,-1.014" Grid.Row="1"/>
+        <Button Content="Go Back" HorizontalAlignment="Left" Margin="-4,658,0,-96" VerticalAlignment="Top" Click="Button_Click" RenderTransformOrigin="2.052,-1.014"/>
     </Grid>
 
 </phone:PhoneApplicationPage>
