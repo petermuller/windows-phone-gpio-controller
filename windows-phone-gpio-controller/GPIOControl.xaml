@@ -15,14 +15,30 @@
 
     <!--LayoutRoot contains the root grid where all other page content is placed-->
     <Grid x:Name="LayoutRoot">
-        <phone:Panorama Title="GPIO Control" Loaded="Panorama_Loaded">
-            <phone:Panorama.Background>
-                <ImageBrush ImageSource="/square.png" Stretch="UniformToFill"/>
-            </phone:Panorama.Background>
+        <phone:Panorama Title="GPIO Control" Loaded="Panorama_Loaded" RenderTransformOrigin="0.5,0.5">
+        	<phone:Panorama.Background>
+        		<ImageBrush ImageSource="large.png" Stretch="UniformToFill">
+        			<ImageBrush.RelativeTransform>
+        				<CompositeTransform/>
+        			</ImageBrush.RelativeTransform>
+        		</ImageBrush>
+        	</phone:Panorama.Background>
 
             <!--Panorama item one-->
             <phone:PanoramaItem Header="Polarity">
-                <ScrollViewer HorizontalAlignment="Left" Height="411" VerticalAlignment="Top" Width="420"/>
+                <ScrollViewer>
+                    <ItemsControl Height="588">
+                        <Button x:Name="GPIO0" Content="GPIO 0" Click="GPIO0_Click"/>
+                        <Button x:Name="GPIO1" Content="GPIO 1" Click="GPIO1_Click"/>
+                        <Button x:Name="GPIO2" Content="GPIO 2" Click="GPIO2_Click"/>
+                        <Button x:Name="GPIO3" Content="GPIO 3" Click="GPIO3_Click"/>
+                        <Button x:Name="GPIO4" Content="GPIO 4" Click="GPIO4_Click"/>
+                        <Button x:Name="GPIO5" Content="GPIO 5" Click="GPIO5_Click"/>
+                        <Button x:Name="GPIO6" Content="GPIO 6" Click="GPIO6_Click"/>
+                        <Button x:Name="GPIO7" Content="GPIO 7" Click="GPIO7_Click"/>
+
+                    </ItemsControl>
+                </ScrollViewer>
             </phone:PanoramaItem>
 
             <!--Panorama item two-->

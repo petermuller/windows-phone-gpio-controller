@@ -217,6 +217,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="h1ji3-pi-black %281%29.png" />
+    <Content Include="small.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="square.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -238,6 +241,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Resource Include="large.png" />
+    <Resource Include="medium.png" />
     <Resource Include="p1header.png" />
     <Resource Include="pibackground.png" />
   </ItemGroup>
