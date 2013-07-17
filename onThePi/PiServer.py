@@ -24,13 +24,16 @@ def main():
         while True: #trying to get signal from client
             connection, address = s.accept()
             while True: #once connected
-                data = connection.recv(10) #TODO Determine how much space I need.
-                parseInput(data)
-                if not data:
-                    break
+                try:
+                    data = connection.recv(10) #TODO Determine space needed
+                    parseInput(data)
+                    if not data:
+                        break
+                except socket.error:
+                    pass
             connection.close()
-        s.close()
-    except:
+        #s.close() #commented to listen for new connections after disconnect
+    except KeyboardInterrupt:
         s.close()
         sys.exit()
             
@@ -41,6 +44,7 @@ def parseInput(data):
 
     @param data - the data to interpret into a command
     """
+    #if data == string1: #Format for adding new commands
     print data.strip() #at least for now
 
 if __name__ == "__main__":

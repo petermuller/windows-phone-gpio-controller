@@ -38,16 +38,18 @@ namespace windows_phone_gpio_controller
         {
             try
             {
-              //  String host = HostAddressInput.Text;
-              //  int port = Convert.ToInt32(PortInput.Text);
-              //  sc.Connect(host, port);
-              //  sc.Send("Testing!");
+                String host = HostAddressInput.Text;
+                int port = Convert.ToInt32(PortNumberInput.Text);
+                sc.Connect(host, port);
+                sc.Send("Testing!");
+                PhoneApplicationService.Current.State["sc"] = sc;
+                NavigationService.Navigate(new Uri("/GPIOControl.xaml", UriKind.Relative));
             }
             catch
             {
                 //Debugging error: print something to the screen (or not go to next page)
             }
-            NavigationService.Navigate(new Uri("/GPIOControl.xaml", UriKind.Relative));
+            
         }
 
         private void Help_Click(object sender, EventArgs e)
