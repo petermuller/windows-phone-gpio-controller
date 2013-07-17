@@ -23,6 +23,7 @@ def main():
     try:
         while True: #trying to get signal from client
             connection, address = s.accept()
+            connection.send("Success")
             while True: #once connected
                 try:
                     data = connection.recv(10) #TODO Determine space needed
