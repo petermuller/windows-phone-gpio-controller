@@ -24,6 +24,11 @@ namespace windows_phone_gpio_controller
 
         public Color Color { get; set; }
 
+        protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
+        {
+            sc.Close();
+        }
+
         private void Panorama_Loaded(object sender, RoutedEventArgs e)
         {
 

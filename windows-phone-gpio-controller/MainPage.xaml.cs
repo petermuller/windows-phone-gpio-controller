@@ -43,7 +43,11 @@ namespace windows_phone_gpio_controller
                 sc.Connect(host, port);
                 sc.Send("Testing!");
                 PhoneApplicationService.Current.State["sc"] = sc;
-                NavigationService.Navigate(new Uri("/GPIOControl.xaml", UriKind.Relative));
+                String success = sc.Receive();
+                if (success == "Success")
+                {
+                    NavigationService.Navigate(new Uri("/GPIOControl.xaml", UriKind.Relative));
+                }
             }
             catch
             {
