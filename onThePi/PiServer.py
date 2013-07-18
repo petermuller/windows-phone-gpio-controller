@@ -6,6 +6,7 @@ Listens for communications and feeds read data back to the program.
 
 import socket
 import sys
+from PiFunctions import *
 
 def main():
     #Initialize the server
@@ -24,14 +25,15 @@ def main():
         while True: #trying to get signal from client
             connection, address = s.accept()
             connection.send("Success")
+            init() #turn on the Pi GPIO
             while True: #once connected
                 try:
                     data = connection.recv(10) #TODO Determine space needed
                     parseInput(data)
                     if not data:
                         break
-                except socket.error:
-                    pass
+                except socket.error: #on phone disconnect
+                    finish()
             connection.close()
         #s.close() #commented to listen for new connections after disconnect
     except KeyboardInterrupt:
@@ -45,8 +47,12 @@ def parseInput(data):
 
     @param data - the data to interpret into a command
     """
-    #if data == string1: #Format for adding new commands
     print data.strip() #at least for now
+    if len(data.strip()) == 5: #5 character commands set pin modes
+        pinMode(int(data[3]),data[4])
+    else:
+        pass #to be determined
+    
 
 if __name__ == "__main__":
     main()
