@@ -60,5 +60,11 @@ namespace windows_phone_gpio_controller
         {
             NavigationService.Navigate(new Uri("/HelpConnect.xaml", UriKind.Relative));
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/GPIOControl.xaml", UriKind.Relative));
+            PhoneApplicationService.Current.State["sc"] = sc;
+        }
     }
 }

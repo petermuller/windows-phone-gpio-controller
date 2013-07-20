@@ -25,12 +25,12 @@
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel" Height="634" VerticalAlignment="Bottom" Margin="0,0,0,-95">
+        <Grid x:Name="ContentPanel" Height="563" VerticalAlignment="Bottom" Margin="0,0,0,-52">
             <Grid.Background>
-                <ImageBrush Stretch="Fill" ImageSource="p1header.png"/>
+                <ImageBrush Stretch="Fill" ImageSource="GordonswiringPiPins.jpg"/>
             </Grid.Background>
         </Grid>
-        <Button Content="Go Back" HorizontalAlignment="Left" Margin="-4,658,0,-96" VerticalAlignment="Top" Click="Button_Click" RenderTransformOrigin="2.052,-1.014"/>
+        <Button Content="Go Back" HorizontalAlignment="Left" Margin="0,686,0,-124" VerticalAlignment="Top" Click="Button_Click" RenderTransformOrigin="2.052,-1.014"/>
     </Grid>
 
 </phone:PhoneApplicationPage>

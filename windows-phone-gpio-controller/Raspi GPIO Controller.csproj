@@ -240,6 +240,7 @@
     <Content Include="Assets\AppBar\e123-Crop.100.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Resource Include="GordonswiringPiPins.jpg" />
     <Resource Include="large.png" />
     <Resource Include="medium.png" />
     <Resource Include="p1header.png" />
