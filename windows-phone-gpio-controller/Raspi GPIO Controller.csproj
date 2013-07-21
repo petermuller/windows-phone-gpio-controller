@@ -96,6 +96,7 @@
     </Compile>
     <Compile Include="Assets\ThemeManager\src\JeffWilcox.PhoneThemeManager\Properties\AssemblyInfo.cs" />
     <Compile Include="Assets\ThemeManager\src\JeffWilcox.PhoneThemeManager\ThemeManager.cs" />
+    <Compile Include="BindableAttribute.cs" />
     <Compile Include="HelpGPIOControl.xaml.cs">
       <DependentUpon>HelpGPIOControl.xaml</DependentUpon>
     </Compile>

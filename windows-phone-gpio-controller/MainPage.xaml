@@ -58,7 +58,6 @@
         <TextBox x:Name="PortNumberInput" HorizontalAlignment="Left" Height="72" TextWrapping="Wrap" VerticalAlignment="Top" Width="456" Margin="0,141,0,0" Grid.Row="1" TextChanged="TextBox_Portnumber"/>
         <Button Content="Continue Without Connecting" HorizontalAlignment="Left" Margin="0,289,0,0" Grid.Row="1" VerticalAlignment="Top" Click="Button_Click"/>
 
-
         <!--ContentPanel - place additional content here-->
 
         <!--Uncomment to see an alignment grid to help ensure your controls are

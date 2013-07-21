@@ -43,7 +43,27 @@
 
             <!--Panorama item two-->
             <phone:PanoramaItem Header="Output Signals">
-                <Grid/>
+                <ScrollViewer>
+                    <ItemsControl Height="923">
+                        <TextBlock TextWrapping="Wrap" Text="GPIO 0" FontSize="24"/>
+                        <Slider Name="Slider0" Maximum="5" ValueChanged="Slider_GPIO0"/>
+                        <TextBox Name="txtGPIO0" Text="{Binding ElementName=Slider0,Path=Value}"/>
+                        <TextBlock TextWrapping="Wrap" Text="GPIO 1" FontSize="24"/>
+                        <Slider x:Name="Slider1" ValueChanged="Slider_GPIO1" Maximum="5"/>
+                        <TextBlock TextWrapping="Wrap" Text="GPIO 2" FontSize="24"/>
+                        <Slider x:Name="Slider2" ValueChanged="Slider_GPIO2" Maximum="5"/>
+                        <TextBlock TextWrapping="Wrap" Text="GPIO 3" FontSize="24"/>
+                        <Slider x:Name="Slider3" ValueChanged="Slider_GPIO3" Maximum="5"/>
+                        <TextBlock TextWrapping="Wrap" Text="GPIO 4" FontSize="24"/>
+                        <Slider x:Name="Slider4" ValueChanged="Slider_GPIO4" Maximum="5"/>
+                        <TextBlock TextWrapping="Wrap" Text="GPIO 5" FontSize="24"/>
+                        <Slider x:Name="Slider5" ValueChanged="Slider_GPIO5" Maximum="5"/>
+                        <TextBlock TextWrapping="Wrap" Text="GPIO 6" FontSize="24"/>
+                        <Slider x:Name="Slider6" ValueChanged="Slider_GPIO6" Maximum="5"/>
+                        <TextBlock TextWrapping="Wrap" Text="GPIO 7" FontSize="24"/>
+                        <Slider x:Name="Slider7" ValueChanged="Slider_GPIO7" Maximum="5"/>
+                    </ItemsControl>
+                </ScrollViewer>
             </phone:PanoramaItem>
 
             <phone:PanoramaItem Header="Monitor">

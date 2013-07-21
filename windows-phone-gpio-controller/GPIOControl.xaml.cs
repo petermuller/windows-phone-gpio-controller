@@ -227,5 +227,46 @@ namespace windows_phone_gpio_controller
             }
         }
 
+        private void Slider_GPIO0(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+  
+        }
+
+        private void Slider_GPIO1(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+
+        }
+
+        private void Slider_GPIO2(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+
+        }
+
+        private void Slider_GPIO3(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+
+        }
+
+        private void Slider_GPIO4(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+
+        }
+
+        private void Slider_GPIO5(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+
+        }
+
+        private void Slider_GPIO6(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+
+        }
+
+        private void Slider_GPIO7(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+
+        }
+
+
     }
 }

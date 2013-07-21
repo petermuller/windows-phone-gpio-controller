@@ -6,6 +6,8 @@ using System.Windows.Markup;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
+using System.Windows.Controls.Slider;
+using System.Boolean;
 using windows_phone_gpio_controller.Resources;
 
 namespace windows_phone_gpio_controller
