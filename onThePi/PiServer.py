@@ -46,10 +46,14 @@ def parseInput(data):
     Processes the data so that operations can be done on the Raspberry Pi.
 
     @param data - the data to interpret into a command
+    @pre - All data is formatted into 3 sections, separated by commas.
     """
-    print data.strip() #at least for now
-    if len(data.strip()) == 5: #5 character commands set pin modes
-        pinMode(int(data[3]),data[4])
+    args = data.strip().split(',')
+    print args
+    if args[0] == "set": #set input or output
+        pinMode(int(args[1]),args[2])
+    elif args[0] == "volt": #set voltage on output pins
+        pass #TODO
     else:
         pass #to be determined
     

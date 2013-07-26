@@ -7,7 +7,7 @@ Contains the actions that will control the Raspberry Pi.
 import RPi.GPIO as GPIO
 
 def init():
-    GPIO.setmode(GPIO.BCM)
+    GPIO.setmode(GPIO.BOARD)
 
 def pinMode(pinNumber,mode):
     """

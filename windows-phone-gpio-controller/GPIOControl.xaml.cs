@@ -57,7 +57,7 @@ namespace windows_phone_gpio_controller
                 ButtonSolidColorBrush.Color = Color.FromArgb(225, 195, 12, 70);
                 GPIO0.Background = ButtonSolidColorBrush;
                 GPIO0.Content = "GPIO 0 Output";
-                sc.Send("pin0o");
+                sc.Send("set,11,o");
                 toggle++;
             }
             else
@@ -66,7 +66,7 @@ namespace windows_phone_gpio_controller
                 ButtonSolidColorBrush.Color = Color.FromArgb(0, 0, 0, 225);
                 GPIO0.Background = ButtonSolidColorBrush;
                 GPIO0.Content = "GPIO 0 Input";
-                sc.Send("pin0i");
+                sc.Send("set,11,i");
                 toggle++;
             }
 
@@ -81,7 +81,7 @@ namespace windows_phone_gpio_controller
                 ButtonSolidColorBrush.Color = Color.FromArgb(225, 195, 12, 70);
                 GPIO1.Background = ButtonSolidColorBrush;
                 GPIO1.Content = "GPIO 1 Output";
-                sc.Send("pin1o");
+                sc.Send("set,12,o");
                 toggle1++;
             }
             else
@@ -90,7 +90,7 @@ namespace windows_phone_gpio_controller
                 ButtonSolidColorBrush.Color = Color.FromArgb(0, 0, 0, 225);
                 GPIO1.Background = ButtonSolidColorBrush;
                 GPIO1.Content = "GPIO 1 Input";
-                sc.Send("pin1i");
+                sc.Send("set,12,i");
                 toggle1++;
             }
         }
@@ -103,7 +103,7 @@ namespace windows_phone_gpio_controller
                 ButtonSolidColorBrush.Color = Color.FromArgb(225, 195, 12, 70);
                 GPIO2.Background = ButtonSolidColorBrush;
                 GPIO2.Content = "GPIO 2 Output";
-                sc.Send("pin2o");
+                sc.Send("set,13,o");
                 toggle2++;
             }
             else
@@ -112,7 +112,7 @@ namespace windows_phone_gpio_controller
                 ButtonSolidColorBrush.Color = Color.FromArgb(0, 0, 0, 225);
                 GPIO2.Background = ButtonSolidColorBrush;
                 GPIO2.Content = "GPIO 2 Input";
-                sc.Send("pin2i");
+                sc.Send("set,13,i");
                 toggle2++;
             }
         }
@@ -125,7 +125,7 @@ namespace windows_phone_gpio_controller
                 ButtonSolidColorBrush.Color = Color.FromArgb(225, 195, 12, 70);
                 GPIO3.Background = ButtonSolidColorBrush;
                 GPIO3.Content = "GPIO 3 Output";
-                sc.Send("pin3o");
+                sc.Send("set,15,o");
                 toggle3++;
             }
             else
@@ -134,7 +134,7 @@ namespace windows_phone_gpio_controller
                 ButtonSolidColorBrush.Color = Color.FromArgb(0, 0, 0, 225);
                 GPIO3.Background = ButtonSolidColorBrush;
                 GPIO3.Content = "GPIO 3 Input";
-                sc.Send("pin3i");
+                sc.Send("set,15,i");
                 toggle3++;
             }
         }
@@ -147,7 +147,7 @@ namespace windows_phone_gpio_controller
                 ButtonSolidColorBrush.Color = Color.FromArgb(225, 195, 12, 70);
                 GPIO4.Background = ButtonSolidColorBrush;
                 GPIO4.Content = "GPIO 4 Output";
-                sc.Send("pin4o");
+                sc.Send("set,16,o");
                 toggle4++;
             }
             else
@@ -156,7 +156,7 @@ namespace windows_phone_gpio_controller
                 ButtonSolidColorBrush.Color = Color.FromArgb(0, 0, 0, 225);
                 GPIO4.Background = ButtonSolidColorBrush;
                 GPIO4.Content = "GPIO 4 Input";
-                sc.Send("pin4i");
+                sc.Send("set,16,i");
                 toggle4++;
             }
         }
@@ -169,7 +169,7 @@ namespace windows_phone_gpio_controller
                 ButtonSolidColorBrush.Color = Color.FromArgb(225, 195, 12, 70);
                 GPIO5.Background = ButtonSolidColorBrush;
                 GPIO5.Content = "GPIO 5 Output";
-                sc.Send("pin5o");
+                sc.Send("set,18,o");
                 toggle5++;
             }
             else
@@ -178,7 +178,7 @@ namespace windows_phone_gpio_controller
                 ButtonSolidColorBrush.Color = Color.FromArgb(0, 0, 0, 225);
                 GPIO5.Background = ButtonSolidColorBrush;
                 GPIO5.Content = "GPIO 5 Input";
-                sc.Send("pin5i");
+                sc.Send("set,18,i");
                 toggle5++;
             }
         }
@@ -191,7 +191,7 @@ namespace windows_phone_gpio_controller
                 ButtonSolidColorBrush.Color = Color.FromArgb(225, 195, 12, 70);
                 GPIO6.Background = ButtonSolidColorBrush;
                 GPIO6.Content = "GPIO 6 Output";
-                sc.Send("pin6o");
+                sc.Send("set,22,o");
                 toggle6++;
             }
             else
@@ -200,7 +200,7 @@ namespace windows_phone_gpio_controller
                 ButtonSolidColorBrush.Color = Color.FromArgb(0, 0, 0, 225);
                 GPIO6.Background = ButtonSolidColorBrush;
                 GPIO6.Content = "GPIO 6 Input";
-                sc.Send("pin6i");
+                sc.Send("set,22,i");
                 toggle6++;
             }
         }
@@ -213,7 +213,7 @@ namespace windows_phone_gpio_controller
                 ButtonSolidColorBrush.Color = Color.FromArgb(225, 195, 12, 70);
                 GPIO7.Background = ButtonSolidColorBrush;
                 GPIO7.Content = "GPIO 7 Output";
-                sc.Send("pin7o");
+                sc.Send("set,7,o");
                 toggle7++;
             }
             else
@@ -222,7 +222,7 @@ namespace windows_phone_gpio_controller
                 ButtonSolidColorBrush.Color = Color.FromArgb(0, 0, 0, 225);
                 GPIO7.Background = ButtonSolidColorBrush;
                 GPIO7.Content = "GPIO 7 Input";
-                sc.Send("pin7i");
+                sc.Send("set,7,i");
                 toggle7++;
             }
         }
