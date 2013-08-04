@@ -53,7 +53,7 @@ def parseInput(data):
     if args[0] == "set": #set input or output
         pinMode(int(args[1]),args[2])
     elif args[0] == "volt": #set voltage on output pins
-        pass #TODO
+        setOut(int(args[1]),args[2])
     else:
         pass #to be determined
     
