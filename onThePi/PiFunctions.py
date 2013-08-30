@@ -9,18 +9,20 @@ import RPi.GPIO as GPIO
 def init():
     GPIO.setmode(GPIO.BOARD)
 
-def pinMode(pinNumber,mode):
+def pinMode(pinNumber,mode,connection):
     """
     Changes whether a pin is treated as input or output.
     
     @param pinNumber - number of the pin to initialize
     @param mode - input mode or output mode
+    @param connection - socket to send and receive data
     """
     if mode == 'i':
-        chanMode = GPIO.IN
+        GPIO.setup(pinNumber,GPIO.IN)
+        GPIO.add_event_detect(pinNumber, GPIO.BOTH, callback=readIn)
+        global connection = connection
     else:
-        chanMode = GPIO.OUT
-    GPIO.setup(pinNumber,chanMode)
+        GPIO.setup(pinNumber,GPIO.OUT)
     
 def setOut(pinNumber,state):
     """
@@ -41,7 +43,8 @@ def readIn(pinNumber):
     
     @param pinNumber - pin to read input from
     """
-    return GPIO.input(pinNumber)
+    #connection is a global variable set in pinMode
+    connection.send(GPIO.input(pinNumber))
 
 def finish():
     """

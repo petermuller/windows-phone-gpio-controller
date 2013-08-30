@@ -29,31 +29,32 @@ def main():
             while True: #once connected
                 try:
                     data = connection.recv(10) #TODO Determine space needed
-                    parseInput(data)
+                    parseInput(data,connection)
                     if not data:
                         break
                 except socket.error: #on phone disconnect
                     finish()
             connection.close()
-        #s.close() #commented to listen for new connections after disconnect
     except KeyboardInterrupt:
         s.close()
         sys.exit()
             
 
-def parseInput(data):
+def parseInput(data,connection):
     """
     Processes the data so that operations can be done on the Raspberry Pi.
 
     @param data - the data to interpret into a command
+    @param connection - socket to send and receive data
     @pre - All data is formatted into 3 sections, separated by commas.
     """
     args = data.strip().split(',')
     print args
     if args[0] == "set": #set input or output
-        pinMode(int(args[1]),args[2])
+        pinMode(int(args[1]),args[2],connection)
     elif args[0] == "volt": #set voltage on output pins
         setOut(int(args[1]),args[2])
+    
     else:
         pass #to be determined
     
