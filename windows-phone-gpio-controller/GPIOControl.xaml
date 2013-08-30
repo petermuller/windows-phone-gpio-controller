@@ -47,7 +47,6 @@
                     <ItemsControl Height="923">
                         <TextBlock TextWrapping="Wrap" Text="GPIO 0" FontSize="24"/>
                         <Slider Name="Slider0" Maximum="5" ValueChanged="Slider_GPIO0"/>
-                        <TextBox Name="txtGPIO0" Text="{Binding ElementName=Slider0,Path=Value}"/>
                         <TextBlock TextWrapping="Wrap" Text="GPIO 1" FontSize="24"/>
                         <Slider x:Name="Slider1" ValueChanged="Slider_GPIO1" Maximum="5"/>
                         <TextBlock TextWrapping="Wrap" Text="GPIO 2" FontSize="24"/>
