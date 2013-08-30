@@ -66,7 +66,26 @@
             </phone:PanoramaItem>
 
             <phone:PanoramaItem Header="Monitor">
-                <Grid/>
+                <ScrollViewer>
+                    <ItemsControl>
+                        <TextBlock TextWrapping="Wrap" Text="GPIO 0" FontSize="24"/>
+                        <TextBlock Name="Monitor0" TextWrapping="Wrap" Text="-" FontSize="24"/>
+                        <TextBlock TextWrapping="Wrap" Text="GPIO 1" FontSize="24"/>
+                        <TextBlock Name="Monitor1" TextWrapping="Wrap" Text="-" FontSize="24"/>
+                        <TextBlock TextWrapping="Wrap" Text="GPIO 2" FontSize="24"/>
+                        <TextBlock Name="Monitor2" TextWrapping="Wrap" Text="-" FontSize="24"/>
+                        <TextBlock TextWrapping="Wrap" Text="GPIO 3" FontSize="24"/>
+                        <TextBlock Name="Monitor3" TextWrapping="Wrap" Text="-" FontSize="24"/>
+                        <TextBlock TextWrapping="Wrap" Text="GPIO 4" FontSize="24"/>
+                        <TextBlock Name="Monitor4" TextWrapping="Wrap" Text="-" FontSize="24"/>
+                        <TextBlock TextWrapping="Wrap" Text="GPIO 5" FontSize="24"/>
+                        <TextBlock Name="Monitor5" TextWrapping="Wrap" Text="-" FontSize="24"/>
+                        <TextBlock TextWrapping="Wrap" Text="GPIO 6" FontSize="24"/>
+                        <TextBlock Name="Monitor6" TextWrapping="Wrap" Text="-" FontSize="24"/>
+                        <TextBlock TextWrapping="Wrap" Text="GPIO 7" FontSize="24"/>
+                        <TextBlock Name="Monitor7" TextWrapping="Wrap" Text="-" FontSize="24"/>
+                    </ItemsControl>
+                </ScrollViewer>
             </phone:PanoramaItem>
 
 
