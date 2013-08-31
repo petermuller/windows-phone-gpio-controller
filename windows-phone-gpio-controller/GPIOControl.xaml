@@ -43,23 +43,23 @@
 
             <!--Panorama item two-->
             <phone:PanoramaItem Header="Output Signals">
-                <ScrollViewer>
-                    <ItemsControl Height="923">
-                        <TextBlock TextWrapping="Wrap" Text="GPIO 0" FontSize="24"/>
+                <ScrollViewer  VerticalAlignment="Top" Height="408">
+                    <ItemsControl Name="GPIOScrollOut">
+                        <TextBlock Name="GPIO0TXT" TextWrapping="Wrap" Text="GPIO 0" FontSize="24"/>
                         <Slider Name="Slider0" Maximum="5" ValueChanged="Slider_GPIO0"/>
-                        <TextBlock TextWrapping="Wrap" Text="GPIO 1" FontSize="24"/>
+                        <TextBlock Name="GPIO1TXT" TextWrapping="Wrap" Text="GPIO 1" FontSize="24"/>
                         <Slider x:Name="Slider1" ValueChanged="Slider_GPIO1" Maximum="5"/>
-                        <TextBlock TextWrapping="Wrap" Text="GPIO 2" FontSize="24"/>
+                        <TextBlock Name="GPIO2TXT" TextWrapping="Wrap" Text="GPIO 2" FontSize="24"/>
                         <Slider x:Name="Slider2" ValueChanged="Slider_GPIO2" Maximum="5"/>
-                        <TextBlock TextWrapping="Wrap" Text="GPIO 3" FontSize="24"/>
+                        <TextBlock Name="GPIO3TXT" TextWrapping="Wrap" Text="GPIO 3" FontSize="24"/>
                         <Slider x:Name="Slider3" ValueChanged="Slider_GPIO3" Maximum="5"/>
-                        <TextBlock TextWrapping="Wrap" Text="GPIO 4" FontSize="24"/>
+                        <TextBlock Name="GPIO4TXT" TextWrapping="Wrap" Text="GPIO 4" FontSize="24"/>
                         <Slider x:Name="Slider4" ValueChanged="Slider_GPIO4" Maximum="5"/>
-                        <TextBlock TextWrapping="Wrap" Text="GPIO 5" FontSize="24"/>
+                        <TextBlock Name="GPIO5TXT" TextWrapping="Wrap" Text="GPIO 5" FontSize="24"/>
                         <Slider x:Name="Slider5" ValueChanged="Slider_GPIO5" Maximum="5"/>
-                        <TextBlock TextWrapping="Wrap" Text="GPIO 6" FontSize="24"/>
+                        <TextBlock Name="GPIO6TXT" TextWrapping="Wrap" Text="GPIO 6" FontSize="24"/>
                         <Slider x:Name="Slider6" ValueChanged="Slider_GPIO6" Maximum="5"/>
-                        <TextBlock TextWrapping="Wrap" Text="GPIO 7" FontSize="24"/>
+                        <TextBlock Name="GPIO7TXT" TextWrapping="Wrap" Text="GPIO 7" FontSize="24"/>
                         <Slider x:Name="Slider7" ValueChanged="Slider_GPIO7" Maximum="5"/>
                     </ItemsControl>
                 </ScrollViewer>
@@ -68,21 +68,21 @@
             <phone:PanoramaItem Header="Monitor">
                 <ScrollViewer>
                     <ItemsControl>
-                        <TextBlock TextWrapping="Wrap" Text="GPIO 0" FontSize="24"/>
+                        <TextBlock Name="GPIO0InTXT" TextWrapping="Wrap" Text="GPIO 0" FontSize="24"/>
                         <TextBlock Name="Monitor0" TextWrapping="Wrap" Text="-" FontSize="24"/>
-                        <TextBlock TextWrapping="Wrap" Text="GPIO 1" FontSize="24"/>
+                        <TextBlock Name="GPIO1InTXT" TextWrapping="Wrap" Text="GPIO 1" FontSize="24"/>
                         <TextBlock Name="Monitor1" TextWrapping="Wrap" Text="-" FontSize="24"/>
-                        <TextBlock TextWrapping="Wrap" Text="GPIO 2" FontSize="24"/>
+                        <TextBlock Name="GPIO2InTXT" TextWrapping="Wrap" Text="GPIO 2" FontSize="24"/>
                         <TextBlock Name="Monitor2" TextWrapping="Wrap" Text="-" FontSize="24"/>
-                        <TextBlock TextWrapping="Wrap" Text="GPIO 3" FontSize="24"/>
+                        <TextBlock Name="GPIO3InTXT" TextWrapping="Wrap" Text="GPIO 3" FontSize="24"/>
                         <TextBlock Name="Monitor3" TextWrapping="Wrap" Text="-" FontSize="24"/>
-                        <TextBlock TextWrapping="Wrap" Text="GPIO 4" FontSize="24"/>
+                        <TextBlock Name="GPIO4InTXT" TextWrapping="Wrap" Text="GPIO 4" FontSize="24"/>
                         <TextBlock Name="Monitor4" TextWrapping="Wrap" Text="-" FontSize="24"/>
-                        <TextBlock TextWrapping="Wrap" Text="GPIO 5" FontSize="24"/>
+                        <TextBlock Name="GPIO5InTXT" TextWrapping="Wrap" Text="GPIO 5" FontSize="24"/>
                         <TextBlock Name="Monitor5" TextWrapping="Wrap" Text="-" FontSize="24"/>
-                        <TextBlock TextWrapping="Wrap" Text="GPIO 6" FontSize="24"/>
+                        <TextBlock Name="GPIO6InTXT" TextWrapping="Wrap" Text="GPIO 6" FontSize="24"/>
                         <TextBlock Name="Monitor6" TextWrapping="Wrap" Text="-" FontSize="24"/>
-                        <TextBlock TextWrapping="Wrap" Text="GPIO 7" FontSize="24"/>
+                        <TextBlock Name="GPIO7InTXT" TextWrapping="Wrap" Text="GPIO 7" FontSize="24"/>
                         <TextBlock Name="Monitor7" TextWrapping="Wrap" Text="-" FontSize="24"/>
                     </ItemsControl>
                 </ScrollViewer>

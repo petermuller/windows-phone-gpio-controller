@@ -57,6 +57,10 @@ namespace windows_phone_gpio_controller
                 ButtonSolidColorBrush.Color = Color.FromArgb(225, 195, 12, 70);
                 GPIO0.Background = ButtonSolidColorBrush;
                 GPIO0.Content = "GPIO 0 Output";
+                Slider0.Visibility = Visibility.Visible;
+                GPIO0TXT.Visibility = Visibility.Visible;
+                Monitor0.Visibility = Visibility.Collapsed;
+                GPIO0InTXT.Visibility = Visibility.Collapsed;
                 Slider0.IsEnabled = true;
                 sc.Send("set,11,o");
                 toggle++;
@@ -68,6 +72,10 @@ namespace windows_phone_gpio_controller
                 GPIO0.Background = ButtonSolidColorBrush;
                 GPIO0.Content = "GPIO 0 Input";
                 Slider0.IsEnabled = false;
+                Monitor0.Visibility = Visibility.Visible;
+                GPIO0InTXT.Visibility = Visibility.Visible;
+                Slider0.Visibility = Visibility.Collapsed;
+                GPIO0TXT.Visibility = Visibility.Collapsed;
                 sc.Send("set,11,i");
                 toggle++;
             }
@@ -83,6 +91,10 @@ namespace windows_phone_gpio_controller
                 ButtonSolidColorBrush.Color = Color.FromArgb(225, 195, 12, 70);
                 GPIO1.Background = ButtonSolidColorBrush;
                 GPIO1.Content = "GPIO 1 Output";
+                Slider1.Visibility = Visibility.Visible;
+                GPIO1TXT.Visibility = Visibility.Visible;
+                Monitor1.Visibility = Visibility.Collapsed;
+                GPIO1InTXT.Visibility = Visibility.Collapsed;
                 Slider1.IsEnabled = true;
                 sc.Send("set,12,o");
                 toggle1++;
@@ -93,6 +105,10 @@ namespace windows_phone_gpio_controller
                 ButtonSolidColorBrush.Color = Color.FromArgb(0, 0, 0, 225);
                 GPIO1.Background = ButtonSolidColorBrush;
                 GPIO1.Content = "GPIO 1 Input";
+                Slider1.Visibility = Visibility.Collapsed;
+                GPIO1TXT.Visibility = Visibility.Collapsed;
+                Monitor1.Visibility = Visibility.Visible;
+                GPIO1InTXT.Visibility = Visibility.Visible;
                 Slider1.IsEnabled = false;
                 sc.Send("set,12,i");
                 toggle1++;
@@ -107,6 +123,10 @@ namespace windows_phone_gpio_controller
                 ButtonSolidColorBrush.Color = Color.FromArgb(225, 195, 12, 70);
                 GPIO2.Background = ButtonSolidColorBrush;
                 GPIO2.Content = "GPIO 2 Output";
+                Slider2.Visibility = Visibility.Visible;
+                GPIO2TXT.Visibility = Visibility.Visible;
+                Monitor2.Visibility = Visibility.Collapsed;
+                GPIO2InTXT.Visibility = Visibility.Collapsed;
                 Slider2.IsEnabled = true;
                 sc.Send("set,13,o");
                 toggle2++;
@@ -117,6 +137,10 @@ namespace windows_phone_gpio_controller
                 ButtonSolidColorBrush.Color = Color.FromArgb(0, 0, 0, 225);
                 GPIO2.Background = ButtonSolidColorBrush;
                 GPIO2.Content = "GPIO 2 Input";
+                Slider2.Visibility = Visibility.Collapsed;
+                GPIO2TXT.Visibility = Visibility.Collapsed;
+                Monitor2.Visibility = Visibility.Visible;
+                GPIO2InTXT.Visibility = Visibility.Visible;
                 Slider2.IsEnabled = false;
                 sc.Send("set,13,i");
                 toggle2++;
@@ -131,6 +155,10 @@ namespace windows_phone_gpio_controller
                 ButtonSolidColorBrush.Color = Color.FromArgb(225, 195, 12, 70);
                 GPIO3.Background = ButtonSolidColorBrush;
                 GPIO3.Content = "GPIO 3 Output";
+                Slider3.Visibility = Visibility.Visible;
+                GPIO3TXT.Visibility = Visibility.Visible;
+                Monitor3.Visibility = Visibility.Collapsed;
+                GPIO3InTXT.Visibility = Visibility.Collapsed;
                 Slider3.IsEnabled = true;
                 sc.Send("set,15,o");
                 toggle3++;
@@ -141,6 +169,10 @@ namespace windows_phone_gpio_controller
                 ButtonSolidColorBrush.Color = Color.FromArgb(0, 0, 0, 225);
                 GPIO3.Background = ButtonSolidColorBrush;
                 GPIO3.Content = "GPIO 3 Input";
+                Slider3.Visibility = Visibility.Collapsed;
+                GPIO3TXT.Visibility = Visibility.Collapsed;
+                Monitor3.Visibility = Visibility.Visible;
+                GPIO3InTXT.Visibility = Visibility.Visible;
                 Slider3.IsEnabled = false;
                 sc.Send("set,15,i");
                 toggle3++;
@@ -155,6 +187,10 @@ namespace windows_phone_gpio_controller
                 ButtonSolidColorBrush.Color = Color.FromArgb(225, 195, 12, 70);
                 GPIO4.Background = ButtonSolidColorBrush;
                 GPIO4.Content = "GPIO 4 Output";
+                Slider4.Visibility = Visibility.Visible;
+                GPIO4TXT.Visibility = Visibility.Visible;
+                Monitor4.Visibility = Visibility.Collapsed;
+                GPIO4InTXT.Visibility = Visibility.Collapsed;
                 Slider4.IsEnabled = true;
                 sc.Send("set,16,o");
                 toggle4++;
@@ -165,6 +201,10 @@ namespace windows_phone_gpio_controller
                 ButtonSolidColorBrush.Color = Color.FromArgb(0, 0, 0, 225);
                 GPIO4.Background = ButtonSolidColorBrush;
                 GPIO4.Content = "GPIO 4 Input";
+                Slider4.Visibility = Visibility.Collapsed;
+                GPIO4TXT.Visibility = Visibility.Collapsed;
+                Monitor4.Visibility = Visibility.Visible;
+                GPIO4InTXT.Visibility = Visibility.Visible;
                 Slider4.IsEnabled = false;
                 sc.Send("set,16,i");
                 toggle4++;
@@ -179,6 +219,10 @@ namespace windows_phone_gpio_controller
                 ButtonSolidColorBrush.Color = Color.FromArgb(225, 195, 12, 70);
                 GPIO5.Background = ButtonSolidColorBrush;
                 GPIO5.Content = "GPIO 5 Output";
+                Slider5.Visibility = Visibility.Visible;
+                GPIO5TXT.Visibility = Visibility.Visible;
+                Monitor5.Visibility = Visibility.Collapsed;
+                GPIO5InTXT.Visibility = Visibility.Collapsed;
                 Slider5.IsEnabled = true;
                 sc.Send("set,18,o");
                 toggle5++;
@@ -189,6 +233,10 @@ namespace windows_phone_gpio_controller
                 ButtonSolidColorBrush.Color = Color.FromArgb(0, 0, 0, 225);
                 GPIO5.Background = ButtonSolidColorBrush;
                 GPIO5.Content = "GPIO 5 Input";
+                Slider5.Visibility = Visibility.Collapsed;
+                GPIO5TXT.Visibility = Visibility.Collapsed;
+                Monitor5.Visibility = Visibility.Visible;
+                GPIO5InTXT.Visibility = Visibility.Visible;
                 Slider5.IsEnabled = false;
                 sc.Send("set,18,i");
                 toggle5++;
@@ -203,6 +251,10 @@ namespace windows_phone_gpio_controller
                 ButtonSolidColorBrush.Color = Color.FromArgb(225, 195, 12, 70);
                 GPIO6.Background = ButtonSolidColorBrush;
                 GPIO6.Content = "GPIO 6 Output";
+                Slider6.Visibility = Visibility.Visible;
+                GPIO6TXT.Visibility = Visibility.Visible;
+                Monitor6.Visibility = Visibility.Collapsed;
+                GPIO6InTXT.Visibility = Visibility.Collapsed;
                 Slider6.IsEnabled = true;
                 sc.Send("set,22,o");
                 toggle6++;
@@ -213,6 +265,10 @@ namespace windows_phone_gpio_controller
                 ButtonSolidColorBrush.Color = Color.FromArgb(0, 0, 0, 225);
                 GPIO6.Background = ButtonSolidColorBrush;
                 GPIO6.Content = "GPIO 6 Input";
+                Slider6.Visibility = Visibility.Collapsed;
+                GPIO6TXT.Visibility = Visibility.Collapsed;
+                Monitor6.Visibility = Visibility.Visible;
+                GPIO6InTXT.Visibility = Visibility.Visible;
                 Slider6.IsEnabled = false;
                 sc.Send("set,22,i");
                 toggle6++;
@@ -227,6 +283,10 @@ namespace windows_phone_gpio_controller
                 ButtonSolidColorBrush.Color = Color.FromArgb(225, 195, 12, 70);
                 GPIO7.Background = ButtonSolidColorBrush;
                 GPIO7.Content = "GPIO 7 Output";
+                Slider7.Visibility = Visibility.Visible;
+                GPIO7TXT.Visibility = Visibility.Visible;
+                Monitor7.Visibility = Visibility.Collapsed;
+                GPIO7InTXT.Visibility = Visibility.Collapsed;
                 Slider7.IsEnabled = true;
                 sc.Send("set,7,o");
                 toggle7++;
@@ -237,6 +297,10 @@ namespace windows_phone_gpio_controller
                 ButtonSolidColorBrush.Color = Color.FromArgb(0, 0, 0, 225);
                 GPIO7.Background = ButtonSolidColorBrush;
                 GPIO7.Content = "GPIO 7 Input";
+                Slider7.Visibility = Visibility.Collapsed;
+                GPIO7TXT.Visibility = Visibility.Collapsed;
+                Monitor7.Visibility = Visibility.Visible;
+                GPIO7InTXT.Visibility = Visibility.Visible;
                 Slider7.IsEnabled = false;
                 sc.Send("set,7,i");
                 toggle7++;
