@@ -36,6 +36,7 @@ def main():
                     finish()
             connection.close()
     except KeyboardInterrupt:
+        finish()
         s.close()
         sys.exit()
             
@@ -56,7 +57,8 @@ def parseInput(data,connection):
         setOut(int(args[1]),args[2])
     
     else:
-        pass #to be determined
+        #Clear board for next connection
+        finish()
     
 
 if __name__ == "__main__":

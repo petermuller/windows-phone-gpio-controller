@@ -18,11 +18,14 @@ def pinMode(pinNumber,mode,connection):
     @param connection - socket to send and receive data
     """
     if mode == 'i':
+        global c
+        c = connection
         GPIO.setup(pinNumber,GPIO.IN)
+        #TODO: Real-time update of digital input values
         GPIO.add_event_detect(pinNumber, GPIO.BOTH, callback=readIn)
-        global connection = connection
     else:
         GPIO.setup(pinNumber,GPIO.OUT)
+        GPIO.remove_event_detect(pinNumber)
     
 def setOut(pinNumber,state):
     """
@@ -44,7 +47,7 @@ def readIn(pinNumber):
     @param pinNumber - pin to read input from
     """
     #connection is a global variable set in pinMode
-    connection.send(GPIO.input(pinNumber))
+    c.send(str(GPIO.input(pinNumber)))
 
 def finish():
     """
