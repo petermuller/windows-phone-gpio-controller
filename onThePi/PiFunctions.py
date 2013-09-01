@@ -17,28 +17,31 @@ def pinMode(pinNumber,mode,connection):
     @param mode - input mode or output mode
     @param connection - socket to send and receive data
     """
+    FREQ = 100 #100Hz
     if mode == 'i':
         global c
         c = connection
         GPIO.setup(pinNumber,GPIO.IN)
-        #TODO: Real-time update of digital input values
         GPIO.add_event_detect(pinNumber, GPIO.BOTH, callback=readIn)
     else:
         GPIO.setup(pinNumber,GPIO.OUT)
+        p = GPIO.PWM(pinNumber,FREQ)
+        p.start(0)
         GPIO.remove_event_detect(pinNumber)
     
-def setOut(pinNumber,state):
+def setOut(pinNumber,percent):
     """
     Sets the output state of the specified pin.
     
     @param pinNumber - number of the pin to set
-    @param state - low (0V) or high (~3.3V)
+    @param percent - percent duty cycle to set average voltage
     """
-    if state == 'h':
-        volt = True #high
-    else:
-        volt = False #low
-    GPIO.output(pinNumber,volt)
+    FREQ = 100 #100Hz
+    try:
+        p = GPIO.PWM(pinNumber,FREQ)
+        p.start(float(percent))
+    except ValueError:
+        pass
     
 def readIn(pinNumber):
     """

@@ -57,8 +57,7 @@ def parseInput(data,connection):
         setOut(int(args[1]),args[2])
     
     else:
-        #Clear board for next connection
-        finish()
+        pass
     
 
 if __name__ == "__main__":

@@ -46,21 +46,21 @@
                 <ScrollViewer  VerticalAlignment="Top" Height="408">
                     <ItemsControl Name="GPIOScrollOut">
                         <TextBlock Name="GPIO0TXT" TextWrapping="Wrap" Text="GPIO 0" FontSize="24" Visibility="Collapsed"/>
-                        <Slider Name="Slider0" Maximum="5" ValueChanged="Slider_GPIO0" Visibility="Collapsed"/>
+                        <Slider x:Name="Slider0" ValueChanged="Slider_GPIO0" Maximum="99" Visibility="Collapsed"/>
                         <TextBlock Name="GPIO1TXT" TextWrapping="Wrap" Text="GPIO 1" FontSize="24" Visibility="Collapsed"/>
-                        <Slider x:Name="Slider1" ValueChanged="Slider_GPIO1" Maximum="5" Visibility="Collapsed"/>
+                        <Slider x:Name="Slider1" ValueChanged="Slider_GPIO1" Maximum="99" Visibility="Collapsed"/>
                         <TextBlock Name="GPIO2TXT" TextWrapping="Wrap" Text="GPIO 2" FontSize="24" Visibility="Collapsed"/>
-                        <Slider x:Name="Slider2" ValueChanged="Slider_GPIO2" Maximum="5" Visibility="Collapsed"/>
+                        <Slider x:Name="Slider2" ValueChanged="Slider_GPIO2" Maximum="99" Visibility="Collapsed"/>
                         <TextBlock Name="GPIO3TXT" TextWrapping="Wrap" Text="GPIO 3" FontSize="24" Visibility="Collapsed"/>
-                        <Slider x:Name="Slider3" ValueChanged="Slider_GPIO3" Maximum="5" Visibility="Collapsed"/>
+                        <Slider x:Name="Slider3" ValueChanged="Slider_GPIO3" Maximum="99" Visibility="Collapsed"/>
                         <TextBlock Name="GPIO4TXT" TextWrapping="Wrap" Text="GPIO 4" FontSize="24" Visibility="Collapsed"/>
-                        <Slider x:Name="Slider4" ValueChanged="Slider_GPIO4" Maximum="5" Visibility="Collapsed"/>
+                        <Slider x:Name="Slider4" ValueChanged="Slider_GPIO4" Maximum="99" Visibility="Collapsed"/>
                         <TextBlock Name="GPIO5TXT" TextWrapping="Wrap" Text="GPIO 5" FontSize="24" Visibility="Collapsed"/>
-                        <Slider x:Name="Slider5" ValueChanged="Slider_GPIO5" Maximum="5" Visibility="Collapsed"/>
+                        <Slider x:Name="Slider5" ValueChanged="Slider_GPIO5" Maximum="99" Visibility="Collapsed"/>
                         <TextBlock Name="GPIO6TXT" TextWrapping="Wrap" Text="GPIO 6" FontSize="24" Visibility="Collapsed"/>
-                        <Slider x:Name="Slider6" ValueChanged="Slider_GPIO6" Maximum="5" Visibility="Collapsed"/>
+                        <Slider x:Name="Slider6" ValueChanged="Slider_GPIO6" Maximum="99" Visibility="Collapsed"/>
                         <TextBlock Name="GPIO7TXT" TextWrapping="Wrap" Text="GPIO 7" FontSize="24" Visibility="Collapsed"/>
-                        <Slider x:Name="Slider7" ValueChanged="Slider_GPIO7" Maximum="5" Visibility="Collapsed"/>
+                        <Slider x:Name="Slider7" ValueChanged="Slider_GPIO7" Maximum="99" Visibility="Collapsed"/>
                     </ItemsControl>
                 </ScrollViewer>
             </phone:PanoramaItem>

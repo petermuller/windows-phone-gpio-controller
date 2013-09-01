@@ -293,100 +293,57 @@ namespace windows_phone_gpio_controller
 
         private void Slider_GPIO0(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            if (Slider0.Value <= 2.5)
-            {
-                sc.Send("volt,11,l");
-            }
-            else
-            {
-                sc.Send("volt,11,h");
-            }
+            sc.Send("volt,11," + formatNumber(Math.Truncate(Slider0.Value)));
         }
 
         private void Slider_GPIO1(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            if (Slider1.Value <= 2.5)
-            {
-                sc.Send("volt,12,l");
-            }
-            else
-            {
-                sc.Send("volt,12,h");
-            }
+            sc.Send("volt,12," + formatNumber(Math.Truncate(Slider1.Value)));
         }
 
         private void Slider_GPIO2(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            if (Slider2.Value <= 2.5)
-            {
-                sc.Send("volt,13,l");
-            }
-            else
-            {
-                sc.Send("volt,13,h");
-            }
+            sc.Send("volt,13," + formatNumber(Math.Truncate(Slider2.Value)));
         }
 
         private void Slider_GPIO3(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            if (Slider3.Value <= 2.5)
-            {
-                sc.Send("volt,15,l");
-            }
-            else
-            {
-                sc.Send("volt,15,h");
-            }
+            sc.Send("volt,15," + formatNumber(Math.Truncate(Slider3.Value)));
         }
 
         private void Slider_GPIO4(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            if (Slider4.Value <= 2.5)
-            {
-                sc.Send("volt,16,l");
-            }
-            else
-            {
-                sc.Send("volt,16,h");
-            }
+            sc.Send("volt,16," + formatNumber(Math.Truncate(Slider4.Value)));
         }
 
         private void Slider_GPIO5(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            if (Slider5.Value <= 2.5)
-            {
-                sc.Send("volt,18,l");
-            }
-            else
-            {
-                sc.Send("volt,18,h");
-            }
+            sc.Send("volt,18," + formatNumber(Math.Truncate(Slider5.Value)));
         }
 
         private void Slider_GPIO6(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            if (Slider6.Value <= 2.5)
-            {
-                sc.Send("volt,22,l");
-            }
-            else
-            {
-                sc.Send("volt,22,h");
-            }
+            sc.Send("volt,22," + formatNumber(Math.Truncate(Slider6.Value)));
         }
 
         private void Slider_GPIO7(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            if (Slider7.Value <= 2.5)
+            sc.Send("volt,7," + formatNumber(Math.Truncate(Slider7.Value)));
+        }
+
+        private String formatNumber(double number)
+        {
+            String val;
+            if (number < 10)
             {
-                sc.Send("volt,7,l");
+                val = "0" + number.ToString();
             }
             else
             {
-                sc.Send("volt,7,h");
+                val = number.ToString();
             }
+            return val;
         }
-
 
     }
 }
