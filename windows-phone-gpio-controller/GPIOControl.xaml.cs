@@ -61,7 +61,6 @@ namespace windows_phone_gpio_controller
                 GPIO0TXT.Visibility = Visibility.Visible;
                 Monitor0.Visibility = Visibility.Collapsed;
                 GPIO0InTXT.Visibility = Visibility.Collapsed;
-                Slider0.IsEnabled = true;
                 sc.Send("set,11,o");
                 toggle++;
             }
@@ -71,7 +70,6 @@ namespace windows_phone_gpio_controller
                 ButtonSolidColorBrush.Color = Color.FromArgb(0, 0, 0, 225);
                 GPIO0.Background = ButtonSolidColorBrush;
                 GPIO0.Content = "GPIO 0 Input";
-                Slider0.IsEnabled = false;
                 Monitor0.Visibility = Visibility.Visible;
                 GPIO0InTXT.Visibility = Visibility.Visible;
                 Slider0.Visibility = Visibility.Collapsed;
@@ -95,7 +93,6 @@ namespace windows_phone_gpio_controller
                 GPIO1TXT.Visibility = Visibility.Visible;
                 Monitor1.Visibility = Visibility.Collapsed;
                 GPIO1InTXT.Visibility = Visibility.Collapsed;
-                Slider1.IsEnabled = true;
                 sc.Send("set,12,o");
                 toggle1++;
             }
@@ -109,7 +106,6 @@ namespace windows_phone_gpio_controller
                 GPIO1TXT.Visibility = Visibility.Collapsed;
                 Monitor1.Visibility = Visibility.Visible;
                 GPIO1InTXT.Visibility = Visibility.Visible;
-                Slider1.IsEnabled = false;
                 sc.Send("set,12,i");
                 toggle1++;
             }
@@ -127,7 +123,6 @@ namespace windows_phone_gpio_controller
                 GPIO2TXT.Visibility = Visibility.Visible;
                 Monitor2.Visibility = Visibility.Collapsed;
                 GPIO2InTXT.Visibility = Visibility.Collapsed;
-                Slider2.IsEnabled = true;
                 sc.Send("set,13,o");
                 toggle2++;
             }
@@ -141,7 +136,6 @@ namespace windows_phone_gpio_controller
                 GPIO2TXT.Visibility = Visibility.Collapsed;
                 Monitor2.Visibility = Visibility.Visible;
                 GPIO2InTXT.Visibility = Visibility.Visible;
-                Slider2.IsEnabled = false;
                 sc.Send("set,13,i");
                 toggle2++;
             }
@@ -159,7 +153,6 @@ namespace windows_phone_gpio_controller
                 GPIO3TXT.Visibility = Visibility.Visible;
                 Monitor3.Visibility = Visibility.Collapsed;
                 GPIO3InTXT.Visibility = Visibility.Collapsed;
-                Slider3.IsEnabled = true;
                 sc.Send("set,15,o");
                 toggle3++;
             }
@@ -173,7 +166,6 @@ namespace windows_phone_gpio_controller
                 GPIO3TXT.Visibility = Visibility.Collapsed;
                 Monitor3.Visibility = Visibility.Visible;
                 GPIO3InTXT.Visibility = Visibility.Visible;
-                Slider3.IsEnabled = false;
                 sc.Send("set,15,i");
                 toggle3++;
             }
@@ -191,7 +183,6 @@ namespace windows_phone_gpio_controller
                 GPIO4TXT.Visibility = Visibility.Visible;
                 Monitor4.Visibility = Visibility.Collapsed;
                 GPIO4InTXT.Visibility = Visibility.Collapsed;
-                Slider4.IsEnabled = true;
                 sc.Send("set,16,o");
                 toggle4++;
             }
@@ -205,7 +196,6 @@ namespace windows_phone_gpio_controller
                 GPIO4TXT.Visibility = Visibility.Collapsed;
                 Monitor4.Visibility = Visibility.Visible;
                 GPIO4InTXT.Visibility = Visibility.Visible;
-                Slider4.IsEnabled = false;
                 sc.Send("set,16,i");
                 toggle4++;
             }
@@ -223,7 +213,6 @@ namespace windows_phone_gpio_controller
                 GPIO5TXT.Visibility = Visibility.Visible;
                 Monitor5.Visibility = Visibility.Collapsed;
                 GPIO5InTXT.Visibility = Visibility.Collapsed;
-                Slider5.IsEnabled = true;
                 sc.Send("set,18,o");
                 toggle5++;
             }
@@ -237,7 +226,6 @@ namespace windows_phone_gpio_controller
                 GPIO5TXT.Visibility = Visibility.Collapsed;
                 Monitor5.Visibility = Visibility.Visible;
                 GPIO5InTXT.Visibility = Visibility.Visible;
-                Slider5.IsEnabled = false;
                 sc.Send("set,18,i");
                 toggle5++;
             }
@@ -255,7 +243,6 @@ namespace windows_phone_gpio_controller
                 GPIO6TXT.Visibility = Visibility.Visible;
                 Monitor6.Visibility = Visibility.Collapsed;
                 GPIO6InTXT.Visibility = Visibility.Collapsed;
-                Slider6.IsEnabled = true;
                 sc.Send("set,22,o");
                 toggle6++;
             }
@@ -269,7 +256,6 @@ namespace windows_phone_gpio_controller
                 GPIO6TXT.Visibility = Visibility.Collapsed;
                 Monitor6.Visibility = Visibility.Visible;
                 GPIO6InTXT.Visibility = Visibility.Visible;
-                Slider6.IsEnabled = false;
                 sc.Send("set,22,i");
                 toggle6++;
             }
@@ -287,7 +273,6 @@ namespace windows_phone_gpio_controller
                 GPIO7TXT.Visibility = Visibility.Visible;
                 Monitor7.Visibility = Visibility.Collapsed;
                 GPIO7InTXT.Visibility = Visibility.Collapsed;
-                Slider7.IsEnabled = true;
                 sc.Send("set,7,o");
                 toggle7++;
             }
@@ -301,7 +286,6 @@ namespace windows_phone_gpio_controller
                 GPIO7TXT.Visibility = Visibility.Collapsed;
                 Monitor7.Visibility = Visibility.Visible;
                 GPIO7InTXT.Visibility = Visibility.Visible;
-                Slider7.IsEnabled = false;
                 sc.Send("set,7,i");
                 toggle7++;
             }
