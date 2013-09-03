@@ -68,8 +68,7 @@ class ServerInstance:
         
         @param pinNumber - pin to read input from
         """
-        #connection is a global variable set in pinMode
-        connection.send(str(GPIO.input(pinNumber)))
+        self.connection.send(str(GPIO.input(pinNumber)))
         
     def finish():
         """
