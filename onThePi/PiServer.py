@@ -52,7 +52,7 @@ def parseInput(data,si):
     args = data.strip().split(',')
     print args
     if args[0] == "set": #set input or output
-        si.pinMode(int(args[1]),args[2],connection)
+        si.pinMode(int(args[1]),args[2])
     elif args[0] == "volt": #set voltage on output pins
         si.setOut(int(args[1]),args[2])
     
