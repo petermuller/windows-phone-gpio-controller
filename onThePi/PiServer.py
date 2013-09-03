@@ -6,7 +6,7 @@ Listens for communications and feeds read data back to the program.
 
 import socket
 import sys
-from PiFunctions import *
+from ServerInstance import ServerInstance
 
 def main():
     #Initialize the server
@@ -25,36 +25,36 @@ def main():
         while True: #trying to get signal from client
             connection, address = s.accept()
             connection.send("Success")
-            init() #turn on the Pi GPIO
+            si = ServerInstance(connection) #turn on the Pi GPIO
             while True: #once connected
                 try:
                     data = connection.recv(10) #TODO Determine space needed
-                    parseInput(data,connection)
+                    parseInput(data,si)
                     if not data:
                         break
                 except socket.error: #on phone disconnect
-                    finish()
+                    si.finish()
             connection.close()
     except KeyboardInterrupt:
-        finish()
+        si.finish()
         s.close()
         sys.exit()
             
 
-def parseInput(data,connection):
+def parseInput(data,si):
     """
     Processes the data so that operations can be done on the Raspberry Pi.
 
     @param data - the data to interpret into a command
-    @param connection - socket to send and receive data
+    @param si - ServerInstance class for GPIO and phone communication
     @pre - All data is formatted into 3 sections, separated by commas.
     """
     args = data.strip().split(',')
     print args
     if args[0] == "set": #set input or output
-        pinMode(int(args[1]),args[2],connection)
+        si.pinMode(int(args[1]),args[2],connection)
     elif args[0] == "volt": #set voltage on output pins
-        setOut(int(args[1]),args[2])
+        si.setOut(int(args[1]),args[2])
     
     else:
         pass
