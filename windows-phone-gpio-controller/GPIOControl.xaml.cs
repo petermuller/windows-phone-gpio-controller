@@ -76,6 +76,10 @@ namespace windows_phone_gpio_controller
                 GPIO0TXT.Visibility = Visibility.Collapsed;
                 sc.Send("set,11,i  ");
                 toggle++;
+                while (GPIO0.Content == "GPIO 0 Input")
+                {
+                    parseInput(sc.Receive().Trim(), Monitor0);
+                }
             }
 
             
@@ -108,6 +112,10 @@ namespace windows_phone_gpio_controller
                 GPIO1InTXT.Visibility = Visibility.Visible;
                 sc.Send("set,12,i  ");
                 toggle1++;
+                while (GPIO1.Content == "GPIO 1 Input")
+                {
+                    parseInput(sc.Receive().Trim(), Monitor1);
+                }
             }
         }
 
@@ -138,6 +146,10 @@ namespace windows_phone_gpio_controller
                 GPIO2InTXT.Visibility = Visibility.Visible;
                 sc.Send("set,13,i  ");
                 toggle2++;
+                while (GPIO2.Content == "GPIO 2 Input")
+                {
+                    parseInput(sc.Receive().Trim(), Monitor2);
+                }
             }
         }
 
@@ -168,6 +180,10 @@ namespace windows_phone_gpio_controller
                 GPIO3InTXT.Visibility = Visibility.Visible;
                 sc.Send("set,15,i  ");
                 toggle3++;
+                while (GPIO3.Content == "GPIO 3 Input")
+                {
+                    parseInput(sc.Receive().Trim(), Monitor3);
+                }
             }
         }
 
@@ -198,6 +214,10 @@ namespace windows_phone_gpio_controller
                 GPIO4InTXT.Visibility = Visibility.Visible;
                 sc.Send("set,16,i  ");
                 toggle4++;
+                while (GPIO4.Content == "GPIO 4 Input")
+                {
+                    parseInput(sc.Receive().Trim(), Monitor4);
+                }
             }
         }
 
@@ -228,6 +248,10 @@ namespace windows_phone_gpio_controller
                 GPIO5InTXT.Visibility = Visibility.Visible;
                 sc.Send("set,18,i  ");
                 toggle5++;
+                while (GPIO5.Content == "GPIO 5 Input")
+                {
+                    parseInput(sc.Receive().Trim(), Monitor5);
+                }
             }
         }
 
@@ -258,6 +282,10 @@ namespace windows_phone_gpio_controller
                 GPIO6InTXT.Visibility = Visibility.Visible;
                 sc.Send("set,22,i  ");
                 toggle6++;
+                while (GPIO6.Content == "GPIO 6 Input")
+                {
+                    parseInput(sc.Receive().Trim(), Monitor6);
+                }
             }
         }
 
@@ -288,6 +316,10 @@ namespace windows_phone_gpio_controller
                 GPIO7InTXT.Visibility = Visibility.Visible;
                 sc.Send("set,7,i   ");
                 toggle7++;
+                while (GPIO7.Content == "GPIO 7 Input")
+                {
+                    parseInput(sc.Receive().Trim(), Monitor7);
+                }
             }
         }
 
@@ -343,6 +375,22 @@ namespace windows_phone_gpio_controller
                 val = number.ToString();
             }
             return val;
+        }
+
+        private void parseInput(String input, TextBlock monitor)
+        {
+            if (input == "1")
+            {
+                monitor.Text = "High";
+            }
+            else if (input == "0")
+            {
+                monitor.Text = "Low";
+            }
+            else
+            {
+                monitor.Text = "-";
+            }
         }
 
     }

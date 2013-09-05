@@ -33,7 +33,8 @@ def main():
                     if not data:
                         break
                 except socket.error: #on phone disconnect
-                    si.finish()
+                    #si.finish() #<-- Might be causing some bugs
+                    pass
             connection.close()
     except KeyboardInterrupt:
         si.finish()
