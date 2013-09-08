@@ -46,12 +46,14 @@ namespace windows_phone_gpio_controller
                 String success = sc.Receive();
                 if (success == "Success")
                 {
+                    ConnectText.Visibility = Visibility.Collapsed;
                     NavigationService.Navigate(new Uri("/GPIOControl.xaml", UriKind.Relative));
                 }
             }
             catch
             {
                 //Debugging error: print something to the screen (or not go to next page)
+                ConnectText.Visibility = Visibility.Visible;
             }
             
         }
