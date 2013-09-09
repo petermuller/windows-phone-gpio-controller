@@ -6,6 +6,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
 using System.Text;
+using System.Threading;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using System.Windows.Media;
@@ -76,13 +77,9 @@ namespace windows_phone_gpio_controller
                 GPIO0TXT.Visibility = Visibility.Collapsed;
                 sc.Send("set,11,i  ");
                 toggle++;
-                while (GPIO0.Content == "GPIO 0 Input")
-                {
-                    parseInput(sc.Receive().Trim(), Monitor0);
-                }
+                Thread t = new Thread(listen);
+                t.Start();
             }
-
-            
         }
 
         private void GPIO1_Click(object sender, RoutedEventArgs e)
@@ -112,10 +109,6 @@ namespace windows_phone_gpio_controller
                 GPIO1InTXT.Visibility = Visibility.Visible;
                 sc.Send("set,12,i  ");
                 toggle1++;
-                while (GPIO1.Content == "GPIO 1 Input")
-                {
-                    parseInput(sc.Receive().Trim(), Monitor1);
-                }
             }
         }
 
@@ -146,10 +139,6 @@ namespace windows_phone_gpio_controller
                 GPIO2InTXT.Visibility = Visibility.Visible;
                 sc.Send("set,13,i  ");
                 toggle2++;
-                while (GPIO2.Content == "GPIO 2 Input")
-                {
-                    parseInput(sc.Receive().Trim(), Monitor2);
-                }
             }
         }
 
@@ -180,10 +169,6 @@ namespace windows_phone_gpio_controller
                 GPIO3InTXT.Visibility = Visibility.Visible;
                 sc.Send("set,15,i  ");
                 toggle3++;
-                while (GPIO3.Content == "GPIO 3 Input")
-                {
-                    parseInput(sc.Receive().Trim(), Monitor3);
-                }
             }
         }
 
@@ -214,10 +199,6 @@ namespace windows_phone_gpio_controller
                 GPIO4InTXT.Visibility = Visibility.Visible;
                 sc.Send("set,16,i  ");
                 toggle4++;
-                while (GPIO4.Content == "GPIO 4 Input")
-                {
-                    parseInput(sc.Receive().Trim(), Monitor4);
-                }
             }
         }
 
@@ -248,10 +229,6 @@ namespace windows_phone_gpio_controller
                 GPIO5InTXT.Visibility = Visibility.Visible;
                 sc.Send("set,18,i  ");
                 toggle5++;
-                while (GPIO5.Content == "GPIO 5 Input")
-                {
-                    parseInput(sc.Receive().Trim(), Monitor5);
-                }
             }
         }
 
@@ -282,10 +259,6 @@ namespace windows_phone_gpio_controller
                 GPIO6InTXT.Visibility = Visibility.Visible;
                 sc.Send("set,22,i  ");
                 toggle6++;
-                while (GPIO6.Content == "GPIO 6 Input")
-                {
-                    parseInput(sc.Receive().Trim(), Monitor6);
-                }
             }
         }
 
@@ -316,10 +289,6 @@ namespace windows_phone_gpio_controller
                 GPIO7InTXT.Visibility = Visibility.Visible;
                 sc.Send("set,7,i   ");
                 toggle7++;
-                while (GPIO7.Content == "GPIO 7 Input")
-                {
-                    parseInput(sc.Receive().Trim(), Monitor7);
-                }
             }
         }
 
@@ -377,19 +346,101 @@ namespace windows_phone_gpio_controller
             return val;
         }
 
-        private void parseInput(String input, TextBlock monitor)
+        private void listen()
         {
-            if (input == "1")
-            {
-                monitor.Text = "High";
-            }
-            else if (input == "0")
-            {
-                monitor.Text = "Low";
-            }
-            else
-            {
-                monitor.Text = "-";
+            while (true)
+            { //or connected
+                //incoming data will be in the form "B,P" where B is a binary
+                //value for high or low, and P is the pin number to track.
+                String input = sc.Receive();
+                if (input == "")
+                {
+                    break;
+                }
+                String[] data = input.Split(',');
+                switch (data[1])
+                {
+                    case "11":
+                        if (data[0] == "1")
+                        {
+                            Monitor0.Text = "High";
+                        }
+                        else
+                        {
+                            Monitor0.Text = "Low";
+                        }
+                        break;
+                    case "12":
+                        if (data[0] == "1")
+                        {
+                            Monitor1.Text = "High";
+                        }
+                        else
+                        {
+                            Monitor1.Text = "Low";
+                        }
+                        break;
+                    case "13":
+                        if (data[0] == "1")
+                        {
+                            Monitor2.Text = "High";
+                        }
+                        else
+                        {
+                            Monitor2.Text = "Low";
+                        }
+                        break;
+                    case "15":
+                        if (data[0] == "1")
+                        {
+                            Monitor3.Text = "High";
+                        }
+                        else
+                        {
+                            Monitor3.Text = "Low";
+                        }
+                        break;
+                    case "16":
+                        if (data[0] == "1")
+                        {
+                            Monitor4.Text = "High";
+                        }
+                        else
+                        {
+                            Monitor4.Text = "Low";
+                        }
+                        break;
+                    case "18":
+                        if (data[0] == "1")
+                        {
+                            Monitor5.Text = "High";
+                        }
+                        else
+                        {
+                            Monitor5.Text = "Low";
+                        }
+                        break;
+                    case "22":
+                        if (data[0] == "1")
+                        {
+                            Monitor6.Text = "High";
+                        }
+                        else
+                        {
+                            Monitor6.Text = "Low";
+                        }
+                        break;
+                    case "7":
+                        if (data[0] == "1")
+                        {
+                            Monitor7.Text = "High";
+                        }
+                        else
+                        {
+                            Monitor7.Text = "Low";
+                        }
+                        break;
+                }
             }
         }
 

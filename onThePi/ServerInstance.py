@@ -69,7 +69,7 @@ class ServerInstance:
         
         @param pinNumber - pin to read input from
         """
-        self.connection.send(str(GPIO.input(pinNumber)))
+        self.connection.send(str(GPIO.input(pinNumber)) + "," + str(pinNumber))
         print "Sent input data to phone" #For debugging
         
     def finish(self):
