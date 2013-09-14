@@ -24,7 +24,7 @@ def main():
     try:
         while True: #trying to get signal from client
             connection, address = s.accept()
-            connection.send("Success")
+            connection.send("yes!!")
             si = ServerInstance(connection) #turn on the Pi GPIO
             while True: #once connected
                 try:

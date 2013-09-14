@@ -38,13 +38,17 @@ namespace windows_phone_gpio_controller
         {
             try
             {
+#if DEBUG
+                HostAddressInput.Text = "metatarsals.student.rit.edu";
+                PortNumberInput.Text = "9001";
+#endif
                 String host = HostAddressInput.Text;
                 int port = Convert.ToInt32(PortNumberInput.Text);
                 sc.Connect(host, port);
                 sc.Send("Testing!");
                 PhoneApplicationService.Current.State["sc"] = sc;
                 String success = sc.Receive();
-                if (success == "Success")
+                if (success == "yes!!")
                 {
                     ConnectText.Visibility = Visibility.Collapsed;
                     NavigationService.Navigate(new Uri("/GPIOControl.xaml", UriKind.Relative));

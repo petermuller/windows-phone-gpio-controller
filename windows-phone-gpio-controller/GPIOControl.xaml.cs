@@ -348,99 +348,117 @@ namespace windows_phone_gpio_controller
 
         private void listen()
         {
+#if DEBUG
+            int counter = 0;
+#endif
             while (true)
             { //or connected
                 //incoming data will be in the form "B,P" where B is a binary
                 //value for high or low, and P is the pin number to track.
                 String input = sc.Receive();
-                if (input == "")
+#if DEBUG
+                counter++;
+                System.Diagnostics.Debug.WriteLine(input+counter.ToString());
+#endif
+                if (!(input == "" || input == "Socket is not initialized" || input == "Operation Timeout" ||
+                        input == "Notconnected"))
                 {
-                    break;
+                    String[] data = input.Trim().Split(',');
+                    try
+                    {
+                        switch (data[1])
+                        {
+                            case "11":
+                                if (data[0] == "1")
+                                {
+                                    Dispatcher.BeginInvoke(() =>
+                                        {
+                                            Monitor0.Text = "High";
+                                        });
+                                }
+                                else
+                                {
+                                    Dispatcher.BeginInvoke(() =>
+                                        {
+                                            Monitor0.Text = "Low";
+                                        });
+                                }
+                                break;
+                            case "12":
+                                if (data[0] == "1")
+                                {
+                                    Monitor1.Text = "High";
+                                }
+                                else
+                                {
+                                    Monitor1.Text = "Low";
+                                }
+                                break;
+                            case "13":
+                                if (data[0] == "1")
+                                {
+                                    Monitor2.Text = "High";
+                                }
+                                else
+                                {
+                                    Monitor2.Text = "Low";
+                                }
+                                break;
+                            case "15":
+                                if (data[0] == "1")
+                                {
+                                    Monitor3.Text = "High";
+                                }
+                                else
+                                {
+                                    Monitor3.Text = "Low";
+                                }
+                                break;
+                            case "16":
+                                if (data[0] == "1")
+                                {
+                                    Monitor4.Text = "High";
+                                }
+                                else
+                                {
+                                    Monitor4.Text = "Low";
+                                }
+                                break;
+                            case "18":
+                                if (data[0] == "1")
+                                {
+                                    Monitor5.Text = "High";
+                                }
+                                else
+                                {
+                                    Monitor5.Text = "Low";
+                                }
+                                break;
+                            case "22":
+                                if (data[0] == "1")
+                                {
+                                    Monitor6.Text = "High";
+                                }
+                                else
+                                {
+                                    Monitor6.Text = "Low";
+                                }
+                                break;
+                            case "7":
+                                if (data[0] == "1")
+                                {
+                                    Monitor7.Text = "High";
+                                }
+                                else
+                                {
+                                    Monitor7.Text = "Low";
+                                }
+                                break;
+                        }
+                    }
+                    catch (IndexOutOfRangeException){}
                 }
-                String[] data = input.Split(',');
-                switch (data[1])
-                {
-                    case "11":
-                        if (data[0] == "1")
-                        {
-                            Monitor0.Text = "High";
-                        }
-                        else
-                        {
-                            Monitor0.Text = "Low";
-                        }
-                        break;
-                    case "12":
-                        if (data[0] == "1")
-                        {
-                            Monitor1.Text = "High";
-                        }
-                        else
-                        {
-                            Monitor1.Text = "Low";
-                        }
-                        break;
-                    case "13":
-                        if (data[0] == "1")
-                        {
-                            Monitor2.Text = "High";
-                        }
-                        else
-                        {
-                            Monitor2.Text = "Low";
-                        }
-                        break;
-                    case "15":
-                        if (data[0] == "1")
-                        {
-                            Monitor3.Text = "High";
-                        }
-                        else
-                        {
-                            Monitor3.Text = "Low";
-                        }
-                        break;
-                    case "16":
-                        if (data[0] == "1")
-                        {
-                            Monitor4.Text = "High";
-                        }
-                        else
-                        {
-                            Monitor4.Text = "Low";
-                        }
-                        break;
-                    case "18":
-                        if (data[0] == "1")
-                        {
-                            Monitor5.Text = "High";
-                        }
-                        else
-                        {
-                            Monitor5.Text = "Low";
-                        }
-                        break;
-                    case "22":
-                        if (data[0] == "1")
-                        {
-                            Monitor6.Text = "High";
-                        }
-                        else
-                        {
-                            Monitor6.Text = "Low";
-                        }
-                        break;
-                    case "7":
-                        if (data[0] == "1")
-                        {
-                            Monitor7.Text = "High";
-                        }
-                        else
-                        {
-                            Monitor7.Text = "Low";
-                        }
-                        break;
-                }
+                
             }
         }
 
