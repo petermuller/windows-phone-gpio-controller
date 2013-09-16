@@ -56,6 +56,8 @@ def parseInput(data,si):
         si.pinMode(int(args[1]),args[2])
     elif args[0] == "volt": #set voltage on output pins
         si.setOut(int(args[1]),args[2])
+    elif args[0] == "readIn":
+        si.readIn(int(args[1])) #read voltage from specified pin
     
     else:
         pass

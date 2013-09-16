@@ -18,6 +18,9 @@ namespace windows_phone_gpio_controller
         int toggle, toggle1,toggle2,toggle3,toggle4,toggle5,toggle6,toggle7 = 0;
         SocketClient sc = (SocketClient)PhoneApplicationService.Current.State["sc"];
 
+        int REFRESH_TIME = 1; //seconds
+
+
         public PanoramaPage1()
         {
             InitializeComponent();
@@ -77,7 +80,7 @@ namespace windows_phone_gpio_controller
                 GPIO0TXT.Visibility = Visibility.Collapsed;
                 sc.Send("set,11,i  ");
                 toggle++;
-                Thread t = new Thread(listen);
+                Thread t = new Thread(() => listen(11,1));
                 t.Start();
             }
         }
@@ -346,119 +349,86 @@ namespace windows_phone_gpio_controller
             return val;
         }
 
-        private void listen()
+        private void listen(int pinNumber, int monitor)
         {
-#if DEBUG
-            int counter = 0;
-#endif
             while (true)
-            { //or connected
-                //incoming data will be in the form "B,P" where B is a binary
-                //value for high or low, and P is the pin number to track.
-                String input = sc.Receive();
-#if DEBUG
-                counter++;
-                System.Diagnostics.Debug.WriteLine(input+counter.ToString());
-#endif
-                if (!(input == "" || input == "Socket is not initialized" || input == "Operation Timeout" ||
-                        input == "Notconnected"))
+            {
+                Thread.Sleep(REFRESH_TIME);
+                string message = "readIn," + pinNumber.ToString();
+                while (message.Length < 10)
                 {
-                    String[] data = input.Trim().Split(',');
-                    try
+                    message += " ";
+                }
+                sc.Send(message);
+                message = sc.Receive(); //reuse var to avoid using more space
+                try
+                {
+                    string[] m = message.Trim().Split(',');
+                    if (m[0] == "1")
                     {
-                        switch (data[1])
+                        switch (monitor)
                         {
-                            case "11":
-                                if (data[0] == "1")
-                                {
-                                    Dispatcher.BeginInvoke(() =>
-                                        {
-                                            Monitor0.Text = "High";
-                                        });
-                                }
-                                else
-                                {
-                                    Dispatcher.BeginInvoke(() =>
-                                        {
-                                            Monitor0.Text = "Low";
-                                        });
-                                }
+                            case 0:
+                                Monitor0.Text = "High";
                                 break;
-                            case "12":
-                                if (data[0] == "1")
-                                {
-                                    Monitor1.Text = "High";
-                                }
-                                else
-                                {
-                                    Monitor1.Text = "Low";
-                                }
+                            case 1:
+                                Monitor1.Text = "High";
                                 break;
-                            case "13":
-                                if (data[0] == "1")
-                                {
-                                    Monitor2.Text = "High";
-                                }
-                                else
-                                {
-                                    Monitor2.Text = "Low";
-                                }
+                            case 2:
+                                Monitor2.Text = "High";
                                 break;
-                            case "15":
-                                if (data[0] == "1")
-                                {
-                                    Monitor3.Text = "High";
-                                }
-                                else
-                                {
-                                    Monitor3.Text = "Low";
-                                }
+                            case 3:
+                                Monitor3.Text = "High";
                                 break;
-                            case "16":
-                                if (data[0] == "1")
-                                {
-                                    Monitor4.Text = "High";
-                                }
-                                else
-                                {
-                                    Monitor4.Text = "Low";
-                                }
+                            case 4:
+                                Monitor4.Text = "High";
                                 break;
-                            case "18":
-                                if (data[0] == "1")
-                                {
-                                    Monitor5.Text = "High";
-                                }
-                                else
-                                {
-                                    Monitor5.Text = "Low";
-                                }
+                            case 5:
+                                Monitor5.Text = "High";
                                 break;
-                            case "22":
-                                if (data[0] == "1")
-                                {
-                                    Monitor6.Text = "High";
-                                }
-                                else
-                                {
-                                    Monitor6.Text = "Low";
-                                }
+                            case 6:
+                                Monitor6.Text = "High";
                                 break;
-                            case "7":
-                                if (data[0] == "1")
-                                {
-                                    Monitor7.Text = "High";
-                                }
-                                else
-                                {
-                                    Monitor7.Text = "Low";
-                                }
+                            case 7:
+                                Monitor7.Text = "High";
                                 break;
                         }
                     }
-                    catch (IndexOutOfRangeException){}
+                    else
+                    {
+                        switch (monitor)
+                        {
+                            case 0:
+                                Monitor0.Text = "Low";
+                                break;
+                            case 1:
+                                Monitor1.Text = "Low";
+                                break;
+                            case 2:
+                                Monitor2.Text = "Low";
+                                break;
+                            case 3:
+                                Monitor3.Text = "Low";
+                                break;
+                            case 4:
+                                Monitor4.Text = "Low";
+                                break;
+                            case 5:
+                                Monitor5.Text = "Low";
+                                break;
+                            case 6:
+                                Monitor6.Text = "Low";
+                                break;
+                            case 7:
+                                Monitor7.Text = "Low";
+                                break;
+                        }
+                    }
                 }
-                
+                catch {
+                    break;
+                }
+
             }
         }
 

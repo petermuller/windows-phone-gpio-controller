@@ -40,12 +40,7 @@ class ServerInstance:
                 self.pins[pinNumber][1].stop()
             self.pins[pinNumber] = ("input")
             GPIO.setup(pinNumber,GPIO.IN)
-            GPIO.add_event_detect(pinNumber, GPIO.BOTH, callback=self.readIn)
         else: # mode == 'o'
-            if pinNumber in self.pins:
-                #This only happens after pin set to output after being an input
-                GPIO.remove_event_detect(pinNumber)
-            GPIO.setup(pinNumber,GPIO.OUT)
             GPIO.setup(pinNumber,GPIO.OUT)
             self.pins[pinNumber] = ("output",GPIO.PWM(pinNumber,self._FREQ))
             self.pins[pinNumber][1].start(0)
