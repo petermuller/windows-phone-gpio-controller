@@ -80,7 +80,7 @@ namespace windows_phone_gpio_controller
                 GPIO0TXT.Visibility = Visibility.Collapsed;
                 sc.Send("set,11,i  ");
                 toggle++;
-                Thread t = new Thread(() => listen(11,1));
+                Thread t = new Thread(() => listen(11,0));
                 t.Start();
             }
         }
@@ -112,6 +112,8 @@ namespace windows_phone_gpio_controller
                 GPIO1InTXT.Visibility = Visibility.Visible;
                 sc.Send("set,12,i  ");
                 toggle1++;
+                Thread t = new Thread(() => listen(12,1));
+                t.Start();
             }
         }
 
@@ -142,6 +144,8 @@ namespace windows_phone_gpio_controller
                 GPIO2InTXT.Visibility = Visibility.Visible;
                 sc.Send("set,13,i  ");
                 toggle2++;
+                Thread t = new Thread(() => listen(13,2));
+                t.Start();
             }
         }
 
@@ -172,6 +176,8 @@ namespace windows_phone_gpio_controller
                 GPIO3InTXT.Visibility = Visibility.Visible;
                 sc.Send("set,15,i  ");
                 toggle3++;
+                Thread t = new Thread(() => listen(15, 3));
+                t.Start();
             }
         }
 
@@ -202,6 +208,8 @@ namespace windows_phone_gpio_controller
                 GPIO4InTXT.Visibility = Visibility.Visible;
                 sc.Send("set,16,i  ");
                 toggle4++;
+                Thread t = new Thread(() => listen(16, 4));
+                t.Start();
             }
         }
 
@@ -232,6 +240,8 @@ namespace windows_phone_gpio_controller
                 GPIO5InTXT.Visibility = Visibility.Visible;
                 sc.Send("set,18,i  ");
                 toggle5++;
+                Thread t = new Thread(() => listen(18,5));
+                t.Start();
             }
         }
 
@@ -262,6 +272,8 @@ namespace windows_phone_gpio_controller
                 GPIO6InTXT.Visibility = Visibility.Visible;
                 sc.Send("set,22,i  ");
                 toggle6++;
+                Thread t = new Thread(() => listen(22, 6));
+                t.Start();
             }
         }
 
@@ -292,6 +304,8 @@ namespace windows_phone_gpio_controller
                 GPIO7InTXT.Visibility = Visibility.Visible;
                 sc.Send("set,7,i   ");
                 toggle7++;
+                Thread t = new Thread(() => listen(7, 7));
+                t.Start();
             }
         }
 
@@ -369,28 +383,52 @@ namespace windows_phone_gpio_controller
                         switch (monitor)
                         {
                             case 0:
-                                Monitor0.Text = "High";
+                                Dispatcher.BeginInvoke(() =>
+                                    {
+                                        Monitor0.Text = "High";
+                                    });
                                 break;
                             case 1:
-                                Monitor1.Text = "High";
+                                Dispatcher.BeginInvoke(() =>
+                                {
+                                    Monitor1.Text = "High";
+                                });
                                 break;
                             case 2:
-                                Monitor2.Text = "High";
+                                Dispatcher.BeginInvoke(() =>
+                                {
+                                    Monitor2.Text = "High";
+                                });
                                 break;
                             case 3:
-                                Monitor3.Text = "High";
+                                Dispatcher.BeginInvoke(() =>
+                                {
+                                    Monitor3.Text = "High";
+                                });
                                 break;
                             case 4:
-                                Monitor4.Text = "High";
+                                Dispatcher.BeginInvoke(() =>
+                                {
+                                    Monitor4.Text = "High";
+                                });
                                 break;
                             case 5:
-                                Monitor5.Text = "High";
+                                Dispatcher.BeginInvoke(() =>
+                                {
+                                    Monitor5.Text = "High";
+                                });
                                 break;
                             case 6:
-                                Monitor6.Text = "High";
+                                Dispatcher.BeginInvoke(() =>
+                                {
+                                    Monitor6.Text = "High";
+                                });
                                 break;
                             case 7:
-                                Monitor7.Text = "High";
+                                Dispatcher.BeginInvoke(() =>
+                                {
+                                    Monitor7.Text = "High";
+                                });
                                 break;
                         }
                     }
@@ -399,28 +437,52 @@ namespace windows_phone_gpio_controller
                         switch (monitor)
                         {
                             case 0:
-                                Monitor0.Text = "Low";
+                                Dispatcher.BeginInvoke(() =>
+                                {
+                                    Monitor0.Text = "Low";
+                                });
                                 break;
                             case 1:
-                                Monitor1.Text = "Low";
+                                Dispatcher.BeginInvoke(() =>
+                                {
+                                    Monitor1.Text = "Low";
+                                });
                                 break;
                             case 2:
-                                Monitor2.Text = "Low";
+                                Dispatcher.BeginInvoke(() =>
+                                {
+                                    Monitor2.Text = "Low";
+                                });
                                 break;
                             case 3:
-                                Monitor3.Text = "Low";
+                                Dispatcher.BeginInvoke(() =>
+                                {
+                                    Monitor3.Text = "Low";
+                                });
                                 break;
                             case 4:
-                                Monitor4.Text = "Low";
+                                Dispatcher.BeginInvoke(() =>
+                                {
+                                    Monitor4.Text = "Low";
+                                });
                                 break;
                             case 5:
-                                Monitor5.Text = "Low";
+                                Dispatcher.BeginInvoke(() =>
+                                {
+                                    Monitor5.Text = "Low";
+                                });
                                 break;
                             case 6:
-                                Monitor6.Text = "Low";
+                                Dispatcher.BeginInvoke(() =>
+                                {
+                                    Monitor6.Text = "Low";
+                                });
                                 break;
                             case 7:
-                                Monitor7.Text = "Low";
+                                Dispatcher.BeginInvoke(() =>
+                                {
+                                    Monitor7.Text = "Low";
+                                });
                                 break;
                         }
                     }
