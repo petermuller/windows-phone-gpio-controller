@@ -18,7 +18,7 @@ namespace windows_phone_gpio_controller
         int toggle, toggle1,toggle2,toggle3,toggle4,toggle5,toggle6,toggle7 = 0;
         SocketClient sc = (SocketClient)PhoneApplicationService.Current.State["sc"];
 
-        int REFRESH_TIME = 1; //seconds
+        int REFRESH_TIME = 250; //milliseconds or 1/4 of a second
 
 
         public PanoramaPage1()
