@@ -39,7 +39,7 @@ namespace windows_phone_gpio_controller
             try
             {
 #if DEBUG
-                HostAddressInput.Text = "metatarsals.student.rit.edu";
+                HostAddressInput.Text = "raspberrypiman.student.rit.edu";
                 PortNumberInput.Text = "9001";
 #endif
                 String host = HostAddressInput.Text;

@@ -52,10 +52,10 @@
             <TextBlock Text="Connect" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="IP Address / Host Name" VerticalAlignment="Top" Margin="12,10,0,0" Grid.Row="1" Width="249"/>
-        <TextBox x:Name="HostAddressInput" HorizontalAlignment="Left" Height="72" TextWrapping="Wrap" VerticalAlignment="Top" Width="456" Margin="0,37,0,0" Grid.Row="1" TextChanged="TextBox_HostAddress"/>
+        <TextBox x:Name="HostAddressInput" HorizontalAlignment="Left" Height="72" TextWrapping="Wrap" VerticalAlignment="Top" Width="456" Margin="0,37,0,0" Grid.Row="1" TextChanged="TextBox_HostAddress" Text="raspberrypiman.student.rit.edu"/>
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Port Number" VerticalAlignment="Top" Margin="10,109,0,0" Grid.Row="1"/>
         <Button x:Name="ConnectButton" Content="Connect" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,213,0,0" Grid.Row="1" Click="Button_Connect" Height="76" Width="150"/>
-        <TextBox x:Name="PortNumberInput" HorizontalAlignment="Left" Height="72" TextWrapping="Wrap" VerticalAlignment="Top" Width="456" Margin="0,141,0,0" Grid.Row="1" TextChanged="TextBox_Portnumber"/>
+        <TextBox x:Name="PortNumberInput" HorizontalAlignment="Left" Height="72" TextWrapping="Wrap" VerticalAlignment="Top" Width="456" Margin="0,141,0,0" Grid.Row="1" TextChanged="TextBox_Portnumber" Text="9001"/>
         <Button Content="Continue Without Connecting" HorizontalAlignment="Left" Margin="0,289,0,0" Grid.Row="1" VerticalAlignment="Top" Click="Button_Click"/>
         <TextBlock Name="ConnectText" HorizontalAlignment="Left" Margin="12,366,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Height="51" Width="444" FontSize="36" Visibility="Collapsed">
         	<Run Text="Something went wrong..."/>

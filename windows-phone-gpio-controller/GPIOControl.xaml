@@ -68,22 +68,22 @@
             <phone:PanoramaItem Header="Monitor">
                 <ScrollViewer>
                     <ItemsControl>
-                        <TextBlock Name="GPIO0InTXT" TextWrapping="Wrap" Text="GPIO 0" FontSize="24" Visibility="Collapsed"/>
-                        <TextBlock Name="Monitor0" TextWrapping="Wrap" Text="-" FontSize="24" Visibility="Collapsed"/>
-                        <TextBlock Name="GPIO1InTXT" TextWrapping="Wrap" Text="GPIO 1" FontSize="24" Visibility="Collapsed"/>
-                        <TextBlock Name="Monitor1" TextWrapping="Wrap" Text="-" FontSize="24" Visibility="Collapsed"/>
-                        <TextBlock Name="GPIO2InTXT" TextWrapping="Wrap" Text="GPIO 2" FontSize="24" Visibility="Collapsed"/>
-                        <TextBlock Name="Monitor2" TextWrapping="Wrap" Text="-" FontSize="24" Visibility="Collapsed"/>
-                        <TextBlock Name="GPIO3InTXT" TextWrapping="Wrap" Text="GPIO 3" FontSize="24" Visibility="Collapsed"/>
-                        <TextBlock Name="Monitor3" TextWrapping="Wrap" Text="-" FontSize="24" Visibility="Collapsed"/>
-                        <TextBlock Name="GPIO4InTXT" TextWrapping="Wrap" Text="GPIO 4" FontSize="24" Visibility="Collapsed"/>
-                        <TextBlock Name="Monitor4" TextWrapping="Wrap" Text="-" FontSize="24" Visibility="Collapsed"/>
-                        <TextBlock Name="GPIO5InTXT" TextWrapping="Wrap" Text="GPIO 5" FontSize="24" Visibility="Collapsed"/>
-                        <TextBlock Name="Monitor5" TextWrapping="Wrap" Text="-" FontSize="24" Visibility="Collapsed"/>
-                        <TextBlock Name="GPIO6InTXT" TextWrapping="Wrap" Text="GPIO 6" FontSize="24" Visibility="Collapsed"/>
-                        <TextBlock Name="Monitor6" TextWrapping="Wrap" Text="-" FontSize="24" Visibility="Collapsed"/>
-                        <TextBlock Name="GPIO7InTXT" TextWrapping="Wrap" Text="GPIO 7" FontSize="24" Visibility="Collapsed"/>
-                        <TextBlock Name="Monitor7" TextWrapping="Wrap" Text="-" FontSize="24" Visibility="Collapsed"/>
+                        <TextBlock Name="GPIO0InTXT" TextWrapping="Wrap" Text="GPIO 0" FontSize="36" Visibility="Collapsed"/>
+                        <TextBlock Name="Monitor0" TextWrapping="Wrap" Text="-" FontSize="48" Visibility="Collapsed"/>
+                        <TextBlock Name="GPIO1InTXT" TextWrapping="Wrap" Text="GPIO 1" FontSize="36" Visibility="Collapsed"/>
+                        <TextBlock Name="Monitor1" TextWrapping="Wrap" Text="-" FontSize="48" Visibility="Collapsed"/>
+                        <TextBlock Name="GPIO2InTXT" TextWrapping="Wrap" Text="GPIO 2" FontSize="36" Visibility="Collapsed"/>
+                        <TextBlock Name="Monitor2" TextWrapping="Wrap" Text="-" FontSize="48" Visibility="Collapsed"/>
+                        <TextBlock Name="GPIO3InTXT" TextWrapping="Wrap" Text="GPIO 3" FontSize="36" Visibility="Collapsed"/>
+                        <TextBlock Name="Monitor3" TextWrapping="Wrap" Text="-" FontSize="48" Visibility="Collapsed"/>
+                        <TextBlock Name="GPIO4InTXT" TextWrapping="Wrap" Text="GPIO 4" FontSize="36" Visibility="Collapsed"/>
+                        <TextBlock Name="Monitor4" TextWrapping="Wrap" Text="-" FontSize="48" Visibility="Collapsed"/>
+                        <TextBlock Name="GPIO5InTXT" TextWrapping="Wrap" Text="GPIO 5" FontSize="36" Visibility="Collapsed"/>
+                        <TextBlock Name="Monitor5" TextWrapping="Wrap" Text="-" FontSize="48" Visibility="Collapsed"/>
+                        <TextBlock Name="GPIO6InTXT" TextWrapping="Wrap" Text="GPIO 6" FontSize="36" Visibility="Collapsed"/>
+                        <TextBlock Name="Monitor6" TextWrapping="Wrap" Text="-" FontSize="48" Visibility="Collapsed"/>
+                        <TextBlock Name="GPIO7InTXT" TextWrapping="Wrap" Text="GPIO 7" FontSize="36" Visibility="Collapsed"/>
+                        <TextBlock Name="Monitor7" TextWrapping="Wrap" Text="-" FontSize="48" Visibility="Collapsed"/>
                     </ItemsControl>
                 </ScrollViewer>
             </phone:PanoramaItem>
