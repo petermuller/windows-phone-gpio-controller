@@ -30,7 +30,7 @@
                 <ImageBrush Stretch="Fill" ImageSource="GordonswiringPiPins.jpg"/>
             </Grid.Background>
         </Grid>
-        <Button Content="Go Back" HorizontalAlignment="Left" Margin="0,686,0,-124" VerticalAlignment="Top" Click="Button_Click" RenderTransformOrigin="2.052,-1.014"/>
+        <Button Content="Go Back" HorizontalAlignment="Left" Margin="12,686,0,-124" VerticalAlignment="Top" Click="Button_Click" RenderTransformOrigin="2.052,-1.014"/>
     </Grid>
 
 </phone:PhoneApplicationPage>
