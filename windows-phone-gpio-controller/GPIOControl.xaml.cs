@@ -15,8 +15,9 @@ namespace windows_phone_gpio_controller
 {
     public partial class PanoramaPage1 : PhoneApplicationPage
     {
-        int toggle, toggle1,toggle2,toggle3,toggle4,toggle5,toggle6,toggle7 = 0;
+        int toggle, toggle1, toggle2, toggle3, toggle4, toggle5, toggle6, toggle7 = 0;
         SocketClient sc = (SocketClient)PhoneApplicationService.Current.State["sc"];
+        bool thread0, thread1, thread2, thread3, thread4, thread5, thread6, thread7 = false;
 
         int REFRESH_TIME = 250; //milliseconds or 1/4 of a second
 
@@ -80,8 +81,12 @@ namespace windows_phone_gpio_controller
                 GPIO0TXT.Visibility = Visibility.Collapsed;
                 sc.Send("set,11,i  ");
                 toggle++;
-                Thread t = new Thread(() => listen(11,0));
-                t.Start();
+                if (!thread0)
+                {
+                    Thread t = new Thread(() => listen(11, 0));
+                    t.Start();
+                    thread0 = true;
+                }
             }
         }
 
@@ -112,8 +117,12 @@ namespace windows_phone_gpio_controller
                 GPIO1InTXT.Visibility = Visibility.Visible;
                 sc.Send("set,12,i  ");
                 toggle1++;
-                Thread t = new Thread(() => listen(12,1));
-                t.Start();
+                if (!thread1)
+                {
+                    Thread t = new Thread(() => listen(12, 1));
+                    t.Start();
+                    thread1 = true;
+                }
             }
         }
 
@@ -144,8 +153,12 @@ namespace windows_phone_gpio_controller
                 GPIO2InTXT.Visibility = Visibility.Visible;
                 sc.Send("set,13,i  ");
                 toggle2++;
-                Thread t = new Thread(() => listen(13,2));
-                t.Start();
+                if (!thread2)
+                {
+                    Thread t = new Thread(() => listen(13, 2));
+                    t.Start();
+                    thread2 = true;
+                }
             }
         }
 
@@ -176,8 +189,12 @@ namespace windows_phone_gpio_controller
                 GPIO3InTXT.Visibility = Visibility.Visible;
                 sc.Send("set,15,i  ");
                 toggle3++;
-                Thread t = new Thread(() => listen(15, 3));
-                t.Start();
+                if (!thread3)
+                {
+                    Thread t = new Thread(() => listen(15, 3));
+                    t.Start();
+                    thread3 = true;
+                }
             }
         }
 
@@ -208,8 +225,12 @@ namespace windows_phone_gpio_controller
                 GPIO4InTXT.Visibility = Visibility.Visible;
                 sc.Send("set,16,i  ");
                 toggle4++;
-                Thread t = new Thread(() => listen(16, 4));
-                t.Start();
+                if (!thread4)
+                {
+                    Thread t = new Thread(() => listen(16, 4));
+                    t.Start();
+                    thread4 = true;
+                }
             }
         }
 
@@ -240,8 +261,12 @@ namespace windows_phone_gpio_controller
                 GPIO5InTXT.Visibility = Visibility.Visible;
                 sc.Send("set,18,i  ");
                 toggle5++;
-                Thread t = new Thread(() => listen(18,5));
-                t.Start();
+                if (!thread5)
+                {
+                    Thread t = new Thread(() => listen(18, 5));
+                    t.Start();
+                    thread5 = true;
+                }
             }
         }
 
@@ -272,8 +297,12 @@ namespace windows_phone_gpio_controller
                 GPIO6InTXT.Visibility = Visibility.Visible;
                 sc.Send("set,22,i  ");
                 toggle6++;
-                Thread t = new Thread(() => listen(22, 6));
-                t.Start();
+                if (!thread6)
+                {
+                    Thread t = new Thread(() => listen(22, 6));
+                    t.Start();
+                    thread6 = true;
+                }
             }
         }
 
@@ -304,8 +333,12 @@ namespace windows_phone_gpio_controller
                 GPIO7InTXT.Visibility = Visibility.Visible;
                 sc.Send("set,7,i   ");
                 toggle7++;
-                Thread t = new Thread(() => listen(7, 7));
-                t.Start();
+                if (!thread7)
+                {
+                    Thread t = new Thread(() => listen(7, 7));
+                    t.Start();
+                    thread7 = true;
+                }
             }
         }
 
@@ -365,7 +398,8 @@ namespace windows_phone_gpio_controller
 
         private void listen(int pinNumber, int monitor)
         {
-            while (true)
+            bool isRunning = true;
+            while (isRunning)
             {
                 Thread.Sleep(REFRESH_TIME);
                 string message = "readIn," + pinNumber.ToString();
@@ -490,7 +524,6 @@ namespace windows_phone_gpio_controller
                 catch {
                     break;
                 }
-
             }
         }
 
