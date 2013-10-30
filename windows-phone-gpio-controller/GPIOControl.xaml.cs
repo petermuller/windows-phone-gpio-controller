@@ -412,6 +412,11 @@ namespace windows_phone_gpio_controller
                 try
                 {
                     string[] m = message.Trim().Split(',');
+                    if (m[0] == "STOP!")
+                    {
+                        isRunning = false;
+                    }
+
                     if (m[0] == "1")
                     {
                         switch (monitor)

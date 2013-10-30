@@ -22,6 +22,9 @@ namespace windows_phone_gpio_controller
             InitializeComponent();
             // Sample code to localize the ApplicationBar
             //BuildLocalizedApplicationBar();
+#if DEBUG
+            NoConnect.Visibility = Visibility.Visible;
+#endif
         }
 
         private void TextBox_HostAddress(object sender, TextChangedEventArgs e)
