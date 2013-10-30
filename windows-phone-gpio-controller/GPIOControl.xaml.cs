@@ -414,7 +414,41 @@ namespace windows_phone_gpio_controller
                     string[] m = message.Trim().Split(',');
                     if (m[0] == "STOP!")
                     {
+                        //Kill current thread
                         isRunning = false;
+                        //allow new threads to be spawned later
+                        if (pinNumber == 11)
+                        {
+                            thread0 = false;
+                        }
+                        if (pinNumber == 12)
+                        {
+                            thread1 = false;
+                        }
+                        if (pinNumber == 13)
+                        {
+                            thread2 = false;
+                        }
+                        if (pinNumber == 15)
+                        {
+                            thread3 = false;
+                        }
+                        if (pinNumber == 16)
+                        {
+                            thread4 = false;
+                        }
+                        if (pinNumber == 18)
+                        {
+                            thread5 = false;
+                        }
+                        if (pinNumber == 22)
+                        {
+                            thread6 = false;
+                        }
+                        if (pinNumber == 7)
+                        {
+                            thread7 = false;
+                        }
                     }
 
                     if (m[0] == "1")
