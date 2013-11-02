@@ -218,6 +218,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="h1ji3-pi-black %281%29.png" />
+    <Content Include="Jack-o-Lanterns_1.png" />
     <Content Include="small.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

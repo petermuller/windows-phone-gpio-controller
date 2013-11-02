@@ -27,8 +27,13 @@
             <!--Panorama item one-->
             <phone:PanoramaItem Header="Polarity">
                 <ScrollViewer>
-                    <ItemsControl Height="588">
-                        <Button x:Name="GPIO0" Content="GPIO 0" Click="GPIO0_Click"/>
+                    <ItemsControl Height="732">
+                 
+                        <Button x:Name="GPIO0" Content="" Click="GPIO0_Click" Height="232">
+                        	<Button.Background>
+                        		<ImageBrush Stretch="Uniform" ImageSource="/Jack-o-Lanterns_1.png"/>
+                        	</Button.Background>
+                        </Button>
                         <Button x:Name="GPIO1" Content="GPIO 1" Click="GPIO1_Click"/>
                         <Button x:Name="GPIO2" Content="GPIO 2" Click="GPIO2_Click"/>
                         <Button x:Name="GPIO3" Content="GPIO 3" Click="GPIO3_Click"/>
@@ -36,7 +41,7 @@
                         <Button x:Name="GPIO5" Content="GPIO 5" Click="GPIO5_Click"/>
                         <Button x:Name="GPIO6" Content="GPIO 6" Click="GPIO6_Click"/>
                         <Button x:Name="GPIO7" Content="GPIO 7" Click="GPIO7_Click"/>
-
+                        
                     </ItemsControl>
                 </ScrollViewer>
             </phone:PanoramaItem>

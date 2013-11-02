@@ -15,10 +15,10 @@ namespace windows_phone_gpio_controller
 {
     public partial class PanoramaPage1 : PhoneApplicationPage
     {
-        int toggle, toggle1, toggle2, toggle3, toggle4, toggle5, toggle6, toggle7 = 0;
+        int toggle, toggle1, toggle2, toggle3, toggle4, toggle5, toggle6, toggle7,readcount, togglepumpkin = 0;
         SocketClient sc = (SocketClient)PhoneApplicationService.Current.State["sc"];
         bool thread0, thread1, thread2, thread3, thread4, thread5, thread6, thread7 = false;
-
+        string pumpkinval;
         int REFRESH_TIME = 250; //milliseconds or 1/4 of a second
 
 
@@ -411,7 +411,9 @@ namespace windows_phone_gpio_controller
                 message = sc.Receive(); //reuse var to avoid using more space
                 try
                 {
+                    readcount++;
                     string[] m = message.Trim().Split(',');
+                    pumpkinval = m[0];
                     if (m[0] == "STOP!")
                     {
                         //Kill current thread
@@ -420,6 +422,7 @@ namespace windows_phone_gpio_controller
                         if (pinNumber == 11)
                         {
                             thread0 = false;
+                            sc.Send("set,11,o  ");
                         }
                         if (pinNumber == 12)
                         {
@@ -513,6 +516,11 @@ namespace windows_phone_gpio_controller
                                 Dispatcher.BeginInvoke(() =>
                                 {
                                     Monitor0.Text = "Low";
+                                    togglepumpkin++;
+                                    if (togglepumpkin > 1 && readcount > 25)
+                                    {
+                                        PumpkinDo();
+                                    }
                                 });
                                 break;
                             case 1:
@@ -560,10 +568,64 @@ namespace windows_phone_gpio_controller
                         }
                     }
                 }
-                catch {
+                catch
+                {
                     break;
                 }
             }
+        }
+
+        public void PumpkinDo( )
+        {
+            sc.Send("set,12,o  ");
+            Thread.Sleep(100);
+            sc.Send("set,13,o  ");
+            Thread.Sleep(100);
+            sc.Send("set,15,o  ");
+            Thread.Sleep(100);
+            sc.Send("set,16,o  ");
+            Thread.Sleep(100);
+            sc.Send("set,18,o  ");
+            Thread.Sleep(100);
+            sc.Send("set,22,o  ");
+            Thread.Sleep(100);
+            sc.Send("set,7,o  ");
+            Thread.Sleep(200);
+ 
+            sc.Send("volt,12,99");
+            Thread.Sleep(100);
+            sc.Send("volt,13,99");
+            Thread.Sleep(100);
+            sc.Send("volt,15,99");
+            Thread.Sleep(100);
+            sc.Send("volt,16,99");
+            Thread.Sleep(100);
+            sc.Send("volt,18,99");
+            Thread.Sleep(100);
+            sc.Send("volt,22,99");
+            Thread.Sleep(100);
+            sc.Send("volt,7,99");
+            Thread.Sleep(10000);
+
+            sc.Send("volt,12,0");
+            Thread.Sleep(100);
+            sc.Send("volt,13,0");
+            Thread.Sleep(100);
+            sc.Send("volt,15,0");
+            Thread.Sleep(100);
+            sc.Send("volt,16,0");
+            Thread.Sleep(100);
+            sc.Send("volt,18,0");
+            Thread.Sleep(100);
+            sc.Send("volt,22,0");
+            Thread.Sleep(100);
+            sc.Send("volt,7,0");
+            Thread.Sleep(100);
+
+            togglepumpkin = 0;
+            readcount = 0;
+            //Thread.Sleep(5000);
+            // }
         }
 
     }
