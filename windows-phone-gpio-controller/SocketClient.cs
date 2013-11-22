@@ -182,7 +182,10 @@ namespace windows_phone_gpio_controller
         /// </summary>
         public void Close()
         {
-            _socket.Close();
+            if (_socket != null)
+            {
+                _socket.Close();
+            }
         }
 
     }
