@@ -58,6 +58,7 @@ namespace windows_phone_gpio_controller
                 // and consume battery power when the user is not using the phone.
                 PhoneApplicationService.Current.UserIdleDetectionMode = IdleDetectionMode.Disabled;
             }
+            PhoneApplicationService.Current.UserIdleDetectionMode = IdleDetectionMode.Disabled;
 
         }
 

@@ -25,7 +25,7 @@ namespace windows_phone_gpio_controller
 
         // The maximum size of the data buffer to use with the asynchronous socket methods
         const int MAX_BUFFER_SIZE = 5;
-
+        
         /// <summary>
         /// Attempt a TCP socket connection to the given host over the given port
         /// </summary>
@@ -182,10 +182,7 @@ namespace windows_phone_gpio_controller
         /// </summary>
         public void Close()
         {
-            if (_socket != null)
-            {
-                _socket.Close();
-            }
+            _socket.Close();
         }
 
     }

@@ -31,6 +31,54 @@ namespace windows_phone_gpio_controller
 
         protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
         {
+            if (toggle % 2 == 1)
+            {
+                sc.Send("set,11,i  ");
+                Thread.Sleep(20);
+            }
+           
+            if (toggle1 % 2 == 1)
+            {
+                sc.Send("set,12,i  ");
+                Thread.Sleep(20);
+            }
+            
+            if (toggle2 % 2 == 1)
+            {
+                sc.Send("set,13,i  ");
+                Thread.Sleep(20);
+            }
+        
+            if (toggle3 % 2 == 1)
+            {
+                sc.Send("set,15,i  ");
+                Thread.Sleep(20);
+            }
+            
+            if (toggle4 % 2 == 1)
+            {
+                sc.Send("set,16,i  ");
+                Thread.Sleep(20);
+            }
+            
+            if (toggle5 % 2 == 1)
+            {
+                sc.Send("set,18,i  ");
+                Thread.Sleep(20);
+            }
+        
+            if (toggle6 % 2 == 1)
+            {
+                sc.Send("set,22,i  ");
+                Thread.Sleep(20);
+            }
+            
+            if (toggle7 % 2 == 1)
+            {
+                sc.Send("set,7,i   ");
+                Thread.Sleep(20);
+            }
+            
             sc.Close();
         }
 
