@@ -102,7 +102,7 @@ namespace windows_phone_gpio_controller
             if (Debugger.IsAttached)
             {
                 // An unhandled exception has occurred; break into the debugger
-                ; Debugger.Break();
+                Debugger.Break();
             }
         }
 
