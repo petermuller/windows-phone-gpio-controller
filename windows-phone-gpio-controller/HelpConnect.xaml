@@ -28,11 +28,32 @@
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="614" Width="446">
-            	<Run Text="Enter your IP address or hostname into the first textbox."/>
-            	<LineBreak/>
-            	<Run Text="In the second textbox, enter the port number that the Raspberry Pi server is listening on. If you did not modify the server, the default port is 9001."/>
+        		<Run Text="Enter your IP address or hostname into the first textbox."/>
+        		<LineBreak/>
+        		<Run/>
+        		<LineBreak/>
+        		<Run Text="If you did not modify the server, the default port is 9001. "/>
+        		<LineBreak/>
+        		<Run/>
+        		<LineBreak/>
+        		<Run Text="Load and run this server on your raspberry pi before you connect. "/>
+        		<LineBreak/>
+        		<Run/>
+        		<LineBreak/>
+        		<Run/>
+        		<LineBreak/>
+        		<Run Text="Download the .zip file to your Raspberry Pi and extract it to any location. "/>
+        		<LineBreak/>
+        		<Run/>
+        		<LineBreak/>
+        		<Run Text="Open a terminal and change the directory to the location of the folder. "/>
+        		<LineBreak/>
+        		<Run/>
+        		<LineBreak/>
+        		<Run Text="Run &quot;sudo python PiServer.py&quot;. If no errors occur, you are ready to connect! Make sure your Raspberry Pi is up to date with the latest  Python version."/>
             </TextBlock>
             <Button x:Name="goback_buttpm" Content="Go Back" HorizontalAlignment="Left" Margin="0,552,0,0" VerticalAlignment="Top" Click="Goback_Click"/>
+            <HyperlinkButton Content="Raspberry Pi Server" HorizontalAlignment="Left" Margin="117,235,0,0" VerticalAlignment="Top" NavigateUri="https://github.com/petermuller/pi-phone-server" TargetName="_blank"/>
 
         </Grid>
     </Grid>
