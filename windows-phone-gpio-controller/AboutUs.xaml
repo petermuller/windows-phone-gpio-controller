@@ -27,7 +27,21 @@
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="14,0,10,0">
-            <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="We can write about how awesome we are right in this little box. Woo!" VerticalAlignment="Top" Height="614" Width="436"/>
+            <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="614" Width="436">
+            	<Run Text="This application is brought to you by the collective efforts of Jordan O'Connor and Peter Muller. We are team of electrical and computer engineers, respectively, at the Rochester Institute of Technology."/>
+            	<LineBreak/>
+            	<Run/>
+            	<LineBreak/>
+            	<Run Text="This application is intended for use with the Raspberry Pi computer system. Check it out at:"/>
+            	<LineBreak/>
+            	<Run Text="raspberrypi.org"/>
+            	<LineBreak/>
+            	<Run/>
+            	<LineBreak/>
+            	<Run Text="Raspberry Pi is a trademark of the Raspberry Pi Foundation."/>
+            	<LineBreak/>
+            	<Run/>
+            </TextBlock>
             <Button x:Name="goback_button" Content="Go Back" HorizontalAlignment="Left" Margin="0,552,0,0" VerticalAlignment="Top" Click="Goback_Click"/>
 
         </Grid>

@@ -27,7 +27,27 @@
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Here we can teach the noobs a thing or two." VerticalAlignment="Top" Height="614" Width="446"/>
+            <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="614" Width="446">
+            	<Run Text="Troubleshooting:"/>
+            	<LineBreak/>
+            	<Run/>
+            	<LineBreak/>
+            	<Run Text="1. Use the provided pinout diagram to match your input and output pins to the notation used in the application."/>
+            	<LineBreak/>
+            	<Run/>
+            	<LineBreak/>
+            	<Run Text="2. If the your Raspberry Pi does not respond to the application, make sure that it is running the server as the root user."/>
+            	<LineBreak/>
+            	<Run/>
+            	<LineBreak/>
+            	<Run Text="3. If step 2 does not help, try closing and reopening  the phone application."/>
+            	<LineBreak/>
+            	<Run/>
+            	<LineBreak/>
+            	<Run Text="4. If the above steps don't help, file a report for us on our GitHub page at:"/>
+            	<LineBreak/>
+            	<Run Text="github.com/petermuller/windows-phone-gpio-controller"/>
+            </TextBlock>
             <Button x:Name="goback_button" Content="Go Back" HorizontalAlignment="Left" Margin="0,552,0,0" VerticalAlignment="Top" Click="Goback_Click"/>
 
         </Grid>
