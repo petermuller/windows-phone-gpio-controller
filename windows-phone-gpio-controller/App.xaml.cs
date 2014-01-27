@@ -64,6 +64,7 @@ namespace windows_phone_gpio_controller
 
         // Code to execute when the application is launching (eg, from Start)
         // This code will not execute when the application is reactivated
+        // -- Hey peter check out these functions -- We should probably use them
         private void Application_Launching(object sender, LaunchingEventArgs e)
         {
         }
