@@ -15,7 +15,8 @@ namespace windows_phone_gpio_controller
 {
     public partial class PanoramaPage1 : PhoneApplicationPage
     {
-        int toggle, toggle1, toggle2, toggle3, toggle4, toggle5, toggle6, toggle7 = 0;
+        /*For these toggles: false correlates to our previous even numbers; true to odd.*/
+        bool toggle, toggle1, toggle2, toggle3, toggle4, toggle5, toggle6, toggle7 = false;
         SocketClient sc = (SocketClient)PhoneApplicationService.Current.State["sc"];
         bool thread0, thread1, thread2, thread3, thread4, thread5, thread6, thread7 = false;
 
@@ -31,49 +32,49 @@ namespace windows_phone_gpio_controller
 
         protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
         {
-            if (toggle % 2 == 1)
+            if (toggle)
             {
                 sc.Send("set,11,i  ");
                 Thread.Sleep(20);
             }
            
-            if (toggle1 % 2 == 1)
+            if (toggle1)
             {
                 sc.Send("set,12,i  ");
                 Thread.Sleep(20);
             }
             
-            if (toggle2 % 2 == 1)
+            if (toggle2)
             {
                 sc.Send("set,13,i  ");
                 Thread.Sleep(20);
             }
         
-            if (toggle3 % 2 == 1)
+            if (toggle3)
             {
                 sc.Send("set,15,i  ");
                 Thread.Sleep(20);
             }
             
-            if (toggle4 % 2 == 1)
+            if (toggle4)
             {
                 sc.Send("set,16,i  ");
                 Thread.Sleep(20);
             }
             
-            if (toggle5 % 2 == 1)
+            if (toggle5)
             {
                 sc.Send("set,18,i  ");
                 Thread.Sleep(20);
             }
         
-            if (toggle6 % 2 == 1)
+            if (toggle6)
             {
                 sc.Send("set,22,i  ");
                 Thread.Sleep(20);
             }
             
-            if (toggle7 % 2 == 1)
+            if (toggle7)
             {
                 sc.Send("set,7,i   ");
                 Thread.Sleep(20);
@@ -104,7 +105,7 @@ namespace windows_phone_gpio_controller
 
         private void GPIO0_Click(object sender, RoutedEventArgs e)
         {
-            if (toggle % 2 == 0)
+            if (!toggle)
             {
                 System.Windows.Media.SolidColorBrush ButtonSolidColorBrush = new System.Windows.Media.SolidColorBrush();
                 ButtonSolidColorBrush.Color = Color.FromArgb(225, 195, 12, 70);
@@ -115,7 +116,7 @@ namespace windows_phone_gpio_controller
                 Monitor0.Visibility = Visibility.Collapsed;
                 GPIO0InTXT.Visibility = Visibility.Collapsed;
                 sc.Send("set,11,o  ");
-                toggle++;
+                toggle = true; ;
             }
             else
             {
@@ -128,7 +129,7 @@ namespace windows_phone_gpio_controller
                 Slider0.Visibility = Visibility.Collapsed;
                 GPIO0TXT.Visibility = Visibility.Collapsed;
                 sc.Send("set,11,i  ");
-                toggle++;
+                toggle=false;
                 if (!thread0)
                 {
                     Thread t = new Thread(() => listen(11, 0));
@@ -140,7 +141,7 @@ namespace windows_phone_gpio_controller
 
         private void GPIO1_Click(object sender, RoutedEventArgs e)
         {
-            if (toggle1 % 2 == 0)
+            if (!toggle1)
             {
                 System.Windows.Media.SolidColorBrush ButtonSolidColorBrush = new System.Windows.Media.SolidColorBrush();
                 ButtonSolidColorBrush.Color = Color.FromArgb(225, 195, 12, 70);
@@ -151,7 +152,7 @@ namespace windows_phone_gpio_controller
                 Monitor1.Visibility = Visibility.Collapsed;
                 GPIO1InTXT.Visibility = Visibility.Collapsed;
                 sc.Send("set,12,o  ");
-                toggle1++;
+                toggle1=true;
             }
             else
             {
@@ -164,7 +165,7 @@ namespace windows_phone_gpio_controller
                 Monitor1.Visibility = Visibility.Visible;
                 GPIO1InTXT.Visibility = Visibility.Visible;
                 sc.Send("set,12,i  ");
-                toggle1++;
+                toggle1=false;
                 if (!thread1)
                 {
                     Thread t = new Thread(() => listen(12, 1));
@@ -176,7 +177,7 @@ namespace windows_phone_gpio_controller
 
         private void GPIO2_Click(object sender, RoutedEventArgs e)
         {
-            if (toggle2 % 2 == 0)
+            if (!toggle2)
             {
                 System.Windows.Media.SolidColorBrush ButtonSolidColorBrush = new System.Windows.Media.SolidColorBrush();
                 ButtonSolidColorBrush.Color = Color.FromArgb(225, 195, 12, 70);
@@ -187,7 +188,7 @@ namespace windows_phone_gpio_controller
                 Monitor2.Visibility = Visibility.Collapsed;
                 GPIO2InTXT.Visibility = Visibility.Collapsed;
                 sc.Send("set,13,o  ");
-                toggle2++;
+                toggle2=true;
             }
             else
             {
@@ -200,7 +201,7 @@ namespace windows_phone_gpio_controller
                 Monitor2.Visibility = Visibility.Visible;
                 GPIO2InTXT.Visibility = Visibility.Visible;
                 sc.Send("set,13,i  ");
-                toggle2++;
+                toggle2=false;
                 if (!thread2)
                 {
                     Thread t = new Thread(() => listen(13, 2));
@@ -212,7 +213,7 @@ namespace windows_phone_gpio_controller
 
         private void GPIO3_Click(object sender, RoutedEventArgs e)
         {
-            if (toggle3 % 2 == 0)
+            if (!toggle3)
             {
                 System.Windows.Media.SolidColorBrush ButtonSolidColorBrush = new System.Windows.Media.SolidColorBrush();
                 ButtonSolidColorBrush.Color = Color.FromArgb(225, 195, 12, 70);
@@ -223,7 +224,7 @@ namespace windows_phone_gpio_controller
                 Monitor3.Visibility = Visibility.Collapsed;
                 GPIO3InTXT.Visibility = Visibility.Collapsed;
                 sc.Send("set,15,o  ");
-                toggle3++;
+                toggle3=true;
             }
             else
             {
@@ -236,7 +237,7 @@ namespace windows_phone_gpio_controller
                 Monitor3.Visibility = Visibility.Visible;
                 GPIO3InTXT.Visibility = Visibility.Visible;
                 sc.Send("set,15,i  ");
-                toggle3++;
+                toggle3=false;
                 if (!thread3)
                 {
                     Thread t = new Thread(() => listen(15, 3));
@@ -248,7 +249,7 @@ namespace windows_phone_gpio_controller
 
         private void GPIO4_Click(object sender, RoutedEventArgs e)
         {
-            if (toggle4 % 2 == 0)
+            if (!toggle4)
             {
                 System.Windows.Media.SolidColorBrush ButtonSolidColorBrush = new System.Windows.Media.SolidColorBrush();
                 ButtonSolidColorBrush.Color = Color.FromArgb(225, 195, 12, 70);
@@ -259,7 +260,7 @@ namespace windows_phone_gpio_controller
                 Monitor4.Visibility = Visibility.Collapsed;
                 GPIO4InTXT.Visibility = Visibility.Collapsed;
                 sc.Send("set,16,o  ");
-                toggle4++;
+                toggle4=true;
             }
             else
             {
@@ -272,7 +273,7 @@ namespace windows_phone_gpio_controller
                 Monitor4.Visibility = Visibility.Visible;
                 GPIO4InTXT.Visibility = Visibility.Visible;
                 sc.Send("set,16,i  ");
-                toggle4++;
+                toggle4=false;
                 if (!thread4)
                 {
                     Thread t = new Thread(() => listen(16, 4));
@@ -284,7 +285,7 @@ namespace windows_phone_gpio_controller
 
         private void GPIO5_Click(object sender, RoutedEventArgs e)
         {
-            if (toggle5 % 2 == 0)
+            if (!toggle5)
             {
                 System.Windows.Media.SolidColorBrush ButtonSolidColorBrush = new System.Windows.Media.SolidColorBrush();
                 ButtonSolidColorBrush.Color = Color.FromArgb(225, 195, 12, 70);
@@ -295,7 +296,7 @@ namespace windows_phone_gpio_controller
                 Monitor5.Visibility = Visibility.Collapsed;
                 GPIO5InTXT.Visibility = Visibility.Collapsed;
                 sc.Send("set,18,o  ");
-                toggle5++;
+                toggle5=true;
             }
             else
             {
@@ -308,7 +309,7 @@ namespace windows_phone_gpio_controller
                 Monitor5.Visibility = Visibility.Visible;
                 GPIO5InTXT.Visibility = Visibility.Visible;
                 sc.Send("set,18,i  ");
-                toggle5++;
+                toggle5=false;
                 if (!thread5)
                 {
                     Thread t = new Thread(() => listen(18, 5));
@@ -320,7 +321,7 @@ namespace windows_phone_gpio_controller
 
         private void GPIO6_Click(object sender, RoutedEventArgs e)
         {
-            if (toggle6 % 2 == 0)
+            if (!toggle6)
             {
                 System.Windows.Media.SolidColorBrush ButtonSolidColorBrush = new System.Windows.Media.SolidColorBrush();
                 ButtonSolidColorBrush.Color = Color.FromArgb(225, 195, 12, 70);
@@ -331,7 +332,7 @@ namespace windows_phone_gpio_controller
                 Monitor6.Visibility = Visibility.Collapsed;
                 GPIO6InTXT.Visibility = Visibility.Collapsed;
                 sc.Send("set,22,o  ");
-                toggle6++;
+                toggle6=true;
             }
             else
             {
@@ -344,7 +345,7 @@ namespace windows_phone_gpio_controller
                 Monitor6.Visibility = Visibility.Visible;
                 GPIO6InTXT.Visibility = Visibility.Visible;
                 sc.Send("set,22,i  ");
-                toggle6++;
+                toggle6=false;
                 if (!thread6)
                 {
                     Thread t = new Thread(() => listen(22, 6));
@@ -356,7 +357,7 @@ namespace windows_phone_gpio_controller
 
         private void GPIO7_Click(object sender, RoutedEventArgs e)
         {
-            if (toggle7 % 2 == 0)
+            if (!toggle7)
             {
                 System.Windows.Media.SolidColorBrush ButtonSolidColorBrush = new System.Windows.Media.SolidColorBrush();
                 ButtonSolidColorBrush.Color = Color.FromArgb(225, 195, 12, 70);
@@ -367,7 +368,7 @@ namespace windows_phone_gpio_controller
                 Monitor7.Visibility = Visibility.Collapsed;
                 GPIO7InTXT.Visibility = Visibility.Collapsed;
                 sc.Send("set,7,o   ");
-                toggle7++;
+                toggle7=true;
             }
             else
             {
@@ -380,7 +381,7 @@ namespace windows_phone_gpio_controller
                 Monitor7.Visibility = Visibility.Visible;
                 GPIO7InTXT.Visibility = Visibility.Visible;
                 sc.Send("set,7,i   ");
-                toggle7++;
+                toggle7=false;
                 if (!thread7)
                 {
                     Thread t = new Thread(() => listen(7, 7));
