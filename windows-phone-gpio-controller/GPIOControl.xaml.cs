@@ -17,7 +17,7 @@ namespace windows_phone_gpio_controller
     public partial class PanoramaPage1 : PhoneApplicationPage
     {
         /*For these toggles: false correlates to our previous even numbers; true to odd.*/
-        bool toggle, toggle1, toggle2, toggle3, toggle4, toggle5, toggle6, toggle7 = false;
+        bool toggle0, toggle1, toggle2, toggle3, toggle4, toggle5, toggle6, toggle7 = false;
         SocketClient sc = (SocketClient)PhoneApplicationService.Current.State["sc"];
         bool thread0, thread1, thread2, thread3, thread4, thread5, thread6, thread7 = false;
         /*Memory for pins settings*/
@@ -29,60 +29,67 @@ namespace windows_phone_gpio_controller
         public PanoramaPage1()
         {
             InitializeComponent();
+            try {
+                if ((string)pins["pin0"] == "output") {
+                    toggle0 = true;
+                }
+            }
+            catch { }
+            try {
+                if ((string)pins["pin1"] == "output")
+                {
+                    toggle1 = true;
+                }
+            }
+            catch { }
+            try {
+                if ((string)pins["pin2"] == "output")
+                {
+                    toggle2 = true;
+                }
+            }
+            catch { }
+            try {
+                if ((string)pins["pin3"] == "output")
+                {
+                    toggle3 = true;
+                }
+            }
+            catch { }
+            try {
+                if ((string)pins["pin4"] == "output")
+                {
+                    toggle4 = true;
+                }
+            }
+            catch { }
+            try {
+                if ((string)pins["pin5"] == "output")
+                {
+                    toggle5 = true;
+                }
+            }
+            catch { }
+            try {
+                if ((string)pins["pin6"] == "output")
+                {
+                    toggle6 = true;
+                }
+            }
+            catch { }
+            try {
+                if ((string)pins["pin7"] == "output")
+                {
+                    toggle7 = true;
+                }
+            }
+            catch { }
         }
 
         public Color Color { get; set; }
 
         protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
-        {
-            if (toggle)
-            {
-                sc.Send("set,11,i  ");
-                Thread.Sleep(20);
-            }
-           
-            if (toggle1)
-            {
-                sc.Send("set,12,i  ");
-                Thread.Sleep(20);
-            }
-            
-            if (toggle2)
-            {
-                sc.Send("set,13,i  ");
-                Thread.Sleep(20);
-            }
-        
-            if (toggle3)
-            {
-                sc.Send("set,15,i  ");
-                Thread.Sleep(20);
-            }
-            
-            if (toggle4)
-            {
-                sc.Send("set,16,i  ");
-                Thread.Sleep(20);
-            }
-            
-            if (toggle5)
-            {
-                sc.Send("set,18,i  ");
-                Thread.Sleep(20);
-            }
-        
-            if (toggle6)
-            {
-                sc.Send("set,22,i  ");
-                Thread.Sleep(20);
-            }
-            
-            if (toggle7)
-            {
-                sc.Send("set,7,i   ");
-                Thread.Sleep(20);
-            }
-            
+        {   
             sc.Close();
         }
 
@@ -108,7 +115,7 @@ namespace windows_phone_gpio_controller
 
         private void GPIO0_Click(object sender, RoutedEventArgs e)
         {
-            if (!toggle)
+            if (!toggle0)
             {
                 System.Windows.Media.SolidColorBrush ButtonSolidColorBrush = new System.Windows.Media.SolidColorBrush();
                 ButtonSolidColorBrush.Color = Color.FromArgb(225, 195, 12, 70);
@@ -120,7 +127,7 @@ namespace windows_phone_gpio_controller
                 GPIO0InTXT.Visibility = Visibility.Collapsed;
                 sc.Send("set,11,o  ");
                 pins["pin0"] = "output";
-                toggle = true; ;
+                toggle0 = true; ;
             }
             else
             {
@@ -134,7 +141,7 @@ namespace windows_phone_gpio_controller
                 GPIO0TXT.Visibility = Visibility.Collapsed;
                 sc.Send("set,11,i  ");
                 pins["pin0"] = "input";
-                toggle=false;
+                toggle0 = false;
                 if (!thread0)
                 {
                     Thread t = new Thread(() => listen(11, 0));

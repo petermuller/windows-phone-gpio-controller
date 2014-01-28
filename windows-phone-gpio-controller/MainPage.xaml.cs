@@ -18,10 +18,8 @@ namespace windows_phone_gpio_controller
         //Class variables
         //For the connection
         SocketClient sc = new SocketClient();
-        //For the storage
-        static IsolatedStorageFile Storage = IsolatedStorageFile.GetUserStoreForApplication();
-        StreamWriter writer;
-        StreamReader reader;
+        /*Memory for pins settings*/
+        private IsolatedStorageSettings storage = IsolatedStorageSettings.ApplicationSettings;
 
 
         // Constructor
@@ -34,9 +32,7 @@ namespace windows_phone_gpio_controller
             //Read host data from file if it exists.
             try
             {
-                reader = new StreamReader(new IsolatedStorageFileStream("hp.txt", FileMode.OpenOrCreate, Storage));
-                HostAddressInput.Text = reader.ReadToEnd().Trim();
-                reader.Close();
+                HostAddressInput.Text = (string)storage["host"];
             }
             catch
             {
@@ -71,16 +67,12 @@ namespace windows_phone_gpio_controller
                 sc.Connect(host, port);
                 sc.Send("Testing!");
 
+                //save host
+                storage["host"] = HostAddressInput.Text;
+
                 //Save the socket client for other screens
                 PhoneApplicationService.Current.State["sc"] = sc;
                 String success = sc.Receive();
-
-                //Write host data to file storage
-                Storage.DeleteFile("hp.txt");
-                writer = new StreamWriter(new IsolatedStorageFileStream("hp.txt", FileMode.OpenOrCreate, Storage));
-                writer.Write(HostAddressInput.Text);
-                writer.Close();
-                //end write to file storage
 
                 if (success == "yes!!")
                 {
@@ -103,10 +95,7 @@ namespace windows_phone_gpio_controller
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Storage.DeleteFile("hp.txt");
-            writer = new StreamWriter(new IsolatedStorageFileStream("hp.txt", FileMode.OpenOrCreate, Storage));
-            writer.Write(HostAddressInput.Text);
-            writer.Close();
+            storage["host"] = HostAddressInput.Text;
             NavigationService.Navigate(new Uri("/GPIOControl.xaml", UriKind.Relative));
             PhoneApplicationService.Current.State["sc"] = sc;
         }
