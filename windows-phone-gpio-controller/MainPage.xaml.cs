@@ -99,7 +99,6 @@ namespace windows_phone_gpio_controller
         private void Help_Click(object sender, EventArgs e)
         {
             NavigationService.Navigate(new Uri("/HelpConnect.xaml", UriKind.Relative));
-            Storage.DeleteFile("hp.txt");
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

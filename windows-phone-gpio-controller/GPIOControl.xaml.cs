@@ -10,6 +10,7 @@ using System.Threading;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using System.Windows.Media;
+using System.IO.IsolatedStorage;
 
 namespace windows_phone_gpio_controller
 {
@@ -19,6 +20,8 @@ namespace windows_phone_gpio_controller
         bool toggle, toggle1, toggle2, toggle3, toggle4, toggle5, toggle6, toggle7 = false;
         SocketClient sc = (SocketClient)PhoneApplicationService.Current.State["sc"];
         bool thread0, thread1, thread2, thread3, thread4, thread5, thread6, thread7 = false;
+        /*Memory for pins settings*/
+        private IsolatedStorageSettings pins = IsolatedStorageSettings.ApplicationSettings;
 
         int REFRESH_TIME = 250; //milliseconds or 1/4 of a second
 
@@ -116,6 +119,7 @@ namespace windows_phone_gpio_controller
                 Monitor0.Visibility = Visibility.Collapsed;
                 GPIO0InTXT.Visibility = Visibility.Collapsed;
                 sc.Send("set,11,o  ");
+                pins["pin0"] = "output";
                 toggle = true; ;
             }
             else
@@ -129,6 +133,7 @@ namespace windows_phone_gpio_controller
                 Slider0.Visibility = Visibility.Collapsed;
                 GPIO0TXT.Visibility = Visibility.Collapsed;
                 sc.Send("set,11,i  ");
+                pins["pin0"] = "input";
                 toggle=false;
                 if (!thread0)
                 {
@@ -152,6 +157,7 @@ namespace windows_phone_gpio_controller
                 Monitor1.Visibility = Visibility.Collapsed;
                 GPIO1InTXT.Visibility = Visibility.Collapsed;
                 sc.Send("set,12,o  ");
+                pins["pin1"] = "output";
                 toggle1=true;
             }
             else
@@ -165,6 +171,7 @@ namespace windows_phone_gpio_controller
                 Monitor1.Visibility = Visibility.Visible;
                 GPIO1InTXT.Visibility = Visibility.Visible;
                 sc.Send("set,12,i  ");
+                pins["pin1"] = "input";
                 toggle1=false;
                 if (!thread1)
                 {
@@ -188,6 +195,7 @@ namespace windows_phone_gpio_controller
                 Monitor2.Visibility = Visibility.Collapsed;
                 GPIO2InTXT.Visibility = Visibility.Collapsed;
                 sc.Send("set,13,o  ");
+                pins["pin2"] = "output";
                 toggle2=true;
             }
             else
@@ -201,6 +209,7 @@ namespace windows_phone_gpio_controller
                 Monitor2.Visibility = Visibility.Visible;
                 GPIO2InTXT.Visibility = Visibility.Visible;
                 sc.Send("set,13,i  ");
+                pins["pin2"] = "input";
                 toggle2=false;
                 if (!thread2)
                 {
@@ -224,6 +233,7 @@ namespace windows_phone_gpio_controller
                 Monitor3.Visibility = Visibility.Collapsed;
                 GPIO3InTXT.Visibility = Visibility.Collapsed;
                 sc.Send("set,15,o  ");
+                pins["pin3"] = "output";
                 toggle3=true;
             }
             else
@@ -237,6 +247,7 @@ namespace windows_phone_gpio_controller
                 Monitor3.Visibility = Visibility.Visible;
                 GPIO3InTXT.Visibility = Visibility.Visible;
                 sc.Send("set,15,i  ");
+                pins["pin3"] = "input";
                 toggle3=false;
                 if (!thread3)
                 {
@@ -260,6 +271,7 @@ namespace windows_phone_gpio_controller
                 Monitor4.Visibility = Visibility.Collapsed;
                 GPIO4InTXT.Visibility = Visibility.Collapsed;
                 sc.Send("set,16,o  ");
+                pins["pin4"] = "output";
                 toggle4=true;
             }
             else
@@ -273,6 +285,7 @@ namespace windows_phone_gpio_controller
                 Monitor4.Visibility = Visibility.Visible;
                 GPIO4InTXT.Visibility = Visibility.Visible;
                 sc.Send("set,16,i  ");
+                pins["pin4"] = "input";
                 toggle4=false;
                 if (!thread4)
                 {
@@ -296,6 +309,7 @@ namespace windows_phone_gpio_controller
                 Monitor5.Visibility = Visibility.Collapsed;
                 GPIO5InTXT.Visibility = Visibility.Collapsed;
                 sc.Send("set,18,o  ");
+                pins["pin5"] = "output";
                 toggle5=true;
             }
             else
@@ -309,6 +323,7 @@ namespace windows_phone_gpio_controller
                 Monitor5.Visibility = Visibility.Visible;
                 GPIO5InTXT.Visibility = Visibility.Visible;
                 sc.Send("set,18,i  ");
+                pins["pin5"] = "input";
                 toggle5=false;
                 if (!thread5)
                 {
@@ -332,6 +347,7 @@ namespace windows_phone_gpio_controller
                 Monitor6.Visibility = Visibility.Collapsed;
                 GPIO6InTXT.Visibility = Visibility.Collapsed;
                 sc.Send("set,22,o  ");
+                pins["pin6"] = "output";
                 toggle6=true;
             }
             else
@@ -345,6 +361,7 @@ namespace windows_phone_gpio_controller
                 Monitor6.Visibility = Visibility.Visible;
                 GPIO6InTXT.Visibility = Visibility.Visible;
                 sc.Send("set,22,i  ");
+                pins["pin6"] = "input";
                 toggle6=false;
                 if (!thread6)
                 {
@@ -368,6 +385,7 @@ namespace windows_phone_gpio_controller
                 Monitor7.Visibility = Visibility.Collapsed;
                 GPIO7InTXT.Visibility = Visibility.Collapsed;
                 sc.Send("set,7,o   ");
+                pins["pin7"] = "output";
                 toggle7=true;
             }
             else
@@ -381,6 +399,7 @@ namespace windows_phone_gpio_controller
                 Monitor7.Visibility = Visibility.Visible;
                 GPIO7InTXT.Visibility = Visibility.Visible;
                 sc.Send("set,7,i   ");
+                pins["pin7"] = "input";
                 toggle7=false;
                 if (!thread7)
                 {
