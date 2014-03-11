@@ -58,10 +58,7 @@ namespace windows_phone_gpio_controller
         {
             try
             {
-#if DEBUG
-                //HostAddressInput.Text = "raspberrypiman.student.rit.edu";
-                //PortNumberInput.Text = "9001";
-#endif
+
                 String host = HostAddressInput.Text;
                 int port = Convert.ToInt32(PortNumberInput.Text);
                 sc.Connect(host, port);
