@@ -49,7 +49,7 @@
             	<Run Text="github.com/petermuller/windows-phone-gpio-controller"/>
             </TextBlock>
             <Button x:Name="goback_button" Content="Go Back" HorizontalAlignment="Left" Margin="0,552,0,0" VerticalAlignment="Top" Click="Goback_Click"/>
-            <HyperlinkButton Content="Our Github Page" HorizontalAlignment="Left" Margin="108,483,0,0" VerticalAlignment="Top" NavigateUri="https://github.com/petermuller/windows-phone-gpio-controller" TargetName="_blank"/>
+            <HyperlinkButton Content="Our Github Page" HorizontalAlignment="Left" Margin="136,482,0,0" VerticalAlignment="Top" NavigateUri="https://github.com/petermuller/windows-phone-gpio-controller" TargetName="_blank"/>
 
         </Grid>
     </Grid>
